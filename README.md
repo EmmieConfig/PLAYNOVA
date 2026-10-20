@@ -34,3 +34,11 @@ The user does not need to install Android Studio or run build commands. GitHub A
 ## PLAYNOVA Settings (v1.1.1)
 
 Open the gear on the Home screen or use the bottom Settings tab. Sound effects can be toggled, effects volume adjusted from 0–100% (90% default), a sound preview played, and gameplay movement speed set to Relaxed, Normal or Fast. Preferences save locally and apply when launching TRAP IQ. The in-game Pause menu no longer contains settings. Device media-volume also affects audible loudness.
+
+## PLAYNOVA v1.2.0 — Midnight Traffic
+
+- Two offline playable games: TRAP IQ (10 levels) and Midnight Traffic (night racing).
+- Midnight Traffic has steering, nitro, near misses, police roadblocks, missions, a garage and local progress.
+- New traffic director forecasts arrival times of existing cars and police barriers, spaces spawning waves, limits density, and keeps an escape lane available.
+- Home Settings' sound toggle and volume apply to Midnight Traffic; in-game sound settings are hidden in the integrated edition.
+- Android back navigation returns to PLAYNOVA without closing the app.
