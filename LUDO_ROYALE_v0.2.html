@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0d1822"><title>LUDO ROYALE • Premium 3D Edition</title>
+<style>
+:root{--ink:#eaf4f2;--muted:#a5b6c4;--gold:#f4cf83;--panel:#152536;--deep:#0b1622;--border:#43566b;--red:#df554e;--green:#32aa84;--yellow:#e9b64a;--blue:#468edc}
+*{box-sizing:border-box}html{height:100%;-webkit-tap-highlight-color:transparent}body{margin:0;min-height:100%;background:radial-gradient(ellipse at 50% 3%,#334952 0,#172938 38%,#0b1622 86%);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif;overscroll-behavior:none}button,input,select{font:inherit}button{cursor:pointer;color:inherit}button:disabled{opacity:.4;cursor:default}.hidden{display:none!important}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#e7cf9636 1px,transparent 1px);background-size:31px 31px;opacity:.18}
+.shell{max-width:1110px;margin:0 auto;position:relative;min-height:100dvh;padding:0 15px 24px}.head{height:77px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brandBlock{display:flex;align-items:center;gap:11px}.crest{width:43px;height:48px;display:grid;place-items:center;border-radius:13px 13px 19px 19px;background:linear-gradient(140deg,#f9e4aa,#bf8b42);box-shadow:0 5px 20px #e9b66e38;color:#372b24;font-size:25px;text-shadow:0 1px #fff8}.brandText{font-family:Georgia,serif;font-weight:900;letter-spacing:1.8px;color:#f9e6bc;font-size:23px;line-height:1.05}.brandText small{display:block;font:700 9px system-ui;letter-spacing:2.9px;color:#9db8bd;margin-top:5px}.headTools{display:flex;gap:8px}.iconBtn{width:40px;height:40px;display:grid;place-items:center;border:1px solid #587084;border-radius:12px;background:#24394b;font-size:19px}.iconBtn:active{transform:scale(.96)}
+.hero{display:grid;grid-template-columns:1fr minmax(230px,310px);gap:26px;align-items:center;padding:22px 4px 27px}.kicker{display:inline-block;color:var(--gold);font-weight:850;letter-spacing:3px;font-size:11px}.hero h1{font-family:Georgia,serif;font-size:clamp(34px,5.2vw,60px);line-height:1.04;letter-spacing:1px;margin:13px 0;color:#fbe8c1;text-shadow:0 5px 25px #c9a06e24}.hero p{color:#b6c6cc;max-width:510px;font-size:14px;line-height:1.8}.heroArt{height:240px;position:relative;display:grid;place-items:center}.artGlow{position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#e1a65545 0%,#79a7c320 44%,transparent 70%);filter:blur(8px)}.artBoard{position:relative;transform:rotate(-15deg);width:205px;height:205px;border:9px solid #e4c188;box-shadow:0 19px 32px #0008,0 0 0 4px #fff2;border-radius:20px;background:conic-gradient(from 45deg,#f6dd9a 0 25%,#d95b54 25% 50%,#61a7d9 50% 75%,#58a88d 75%)}.artBoard:before{content:"";position:absolute;inset:33%;border:6px solid #fcf5da;border-radius:8px;transform:rotate(45deg);background:#b88e55}.artPiece{position:absolute;width:38px;height:38px;border-radius:50%;border:5px solid #fff9;box-shadow:0 5px 12px #0008,inset 0 -8px 3px #0004}.artPiece:nth-child(3){top:15%;left:15%;background:#f36c6a}.artPiece:nth-child(4){right:15%;top:15%;background:#40c294}.artPiece:nth-child(5){bottom:15%;right:15%;background:#ffd657}.artPiece:nth-child(6){bottom:15%;left:15%;background:#64a7ff}.floatingDie{position:absolute;right:11px;bottom:11px;background:#fff7e9;color:#202b32;padding:11px 15px;border-radius:16px;font-size:35px;box-shadow:0 8px 17px #0006;transform:rotate(13deg)}
+.lobbyGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.card{border:1px solid #4c6573;border-radius:21px;padding:19px;background:linear-gradient(160deg,#1c3140 0%,#111e2d 100%);box-shadow:0 14px 30px #0003}.cardTitle{font-family:Georgia,serif;font-size:20px;margin:0 0 15px;color:#f8e3b6}.sectionLabel{display:block;font-size:11px;color:#97b5c1;font-weight:850;letter-spacing:1.5px;margin:18px 0 9px}.seg{display:flex;gap:7px;background:#101d2b;padding:5px;border:1px solid #42566a;border-radius:13px}.seg button{flex:1;border:0;border-radius:9px;background:transparent;color:#a5b5c4;padding:11px 7px;font-size:12px;font-weight:850;transition:background .18s}.seg button.selected{background:linear-gradient(145deg,#e7c486,#bd8b48);color:#28231e;box-shadow:0 2px 11px #d8a66035}.select{width:100%;border:1px solid #5a6b79;background:#263947;color:#f7ece2;border-radius:12px;padding:11px 12px;outline:none;max-width:100%}.names{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:10px}.nameField{display:flex;align-items:center;gap:8px;padding:7px 11px;background:#122638;border-radius:10px;border:1px solid #3d5667}.nameDot{width:11px;height:11px;border-radius:50%;box-shadow:0 0 10px currentColor;flex:none}.nameField input{width:100%;min-width:0;border:0;outline:0;color:#fff;background:transparent;font-size:13px}.nameField input:disabled{opacity:.6}.colorPick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:9px 0}.colorPick button{min-width:0;border:1px solid #475f6e;background:#142b3b;border-radius:11px;padding:10px 5px;color:#c7d6df;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px}.colorPick button.selected{border-color:#e8c47e;box-shadow:inset 0 0 0 1px #e8c47e55;background:#344451;color:#fff}.colorPick .swatch{width:23px;height:23px;display:block;border-radius:50%;box-shadow:0 3px 8px #0007,inset 0 -5px #0004;border:2px solid #ffffff99}.checkrow{display:flex;align-items:flex-start;justify-content:space-between;gap:9px;margin:12px 0;font-size:12px;color:#d8e2e9;line-height:1.45}.checkrow span{flex:1}.checkrow small{display:block;color:#93a8b8;font-size:10px;margin-top:3px}.checkrow input{margin:1px 2px 0 0;accent-color:#d2ac64;width:19px;height:19px;flex:none}.rulesInfo{color:#a6b9c4;font-size:12px;line-height:1.8;margin:13px 0}.rulesGrid{display:grid;grid-template-columns:1fr 1fr;column-gap:10px}.startBtn{width:100%;margin-top:18px;padding:17px;border-radius:15px;background:linear-gradient(110deg,#f6df9f,#e9b660 58%,#c68f48);color:#372718;border:0;font-size:14px;font-weight:950;letter-spacing:1.6px;box-shadow:0 7px 24px #dcaf6a40;transition:transform .15s}.startBtn:active{transform:scale(.985)}.privacy{text-align:center;color:#879daa;font-size:11px;margin:18px 0}
+/* Game scene */
+#gameScene{padding-bottom:10px}.gameTop{display:flex;justify-content:space-between;gap:7px;align-items:center;margin:3px 0 12px}.gameTop .roundTag{color:#e9d5aa;font-weight:900;font-size:12px;letter-spacing:1px}.gameStatus{display:flex;gap:8px;align-items:center;justify-content:center;font-size:11px;color:#a5bbc7}.gameStage{display:grid;grid-template-columns:minmax(0,660px) minmax(230px,330px);gap:17px;align-items:start}.gameBoardCol{min-width:0}.boardFrame{position:relative;border-radius:23px;padding:10px;background:linear-gradient(130deg,#f3dfa5,#a7773e 38%,#f0d9a2 65%,#855e38);box-shadow:0 13px 35px #0009, inset 0 2px #fff8;border:2px solid #bf9359}.boardInner{border:4px solid #765839;border-radius:11px;overflow:hidden;box-shadow:inset 0 0 0 3px #fff8}.boardInner canvas{display:block;width:100%;height:auto;aspect-ratio:1/1;touch-action:manipulation;cursor:pointer;background:#f8ecd0}.boardFoot{margin:10px 0;color:#a5b8be;font-size:10px;text-align:center}.side{display:flex;flex-direction:column;gap:12px}.scoreCard{display:grid;grid-template-columns:1fr 1fr;gap:8px}.playerTile{min-width:0;background:#172736;border:1px solid #4c6170;border-radius:15px;padding:10px 9px;display:flex;align-items:center;gap:8px;position:relative;overflow:hidden;transition:border-color .2s,box-shadow .2s}.playerTile.active{border-color:#efc46d;box-shadow:0 0 0 2px #ebc56d3c,inset 0 0 25px #eac05c16}.playerTile.active:after{content:"";position:absolute;inset:auto 0 0;background:linear-gradient(90deg,transparent,#f1c96e,transparent);height:3px}.playerChip{height:33px;width:33px;flex:none;border-radius:50%;display:grid;place-items:center;font-weight:950;color:#fff;text-shadow:0 2px #0005;box-shadow:inset 0 -5px #0003,0 3px 8px #0004}.playerTxt{min-width:0}.playerTxt b{display:block;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.playerTxt small{display:block;font-size:9px;color:#b0c1cc;margin-top:3px}.diceCard{padding:17px 14px;text-align:center;background:linear-gradient(160deg,#203747,#142633);border-radius:20px;border:1px solid #647582;box-shadow:inset 0 2px #fff1}.turnTitle{color:#f5d994;font-family:Georgia,serif;font-size:20px;font-weight:900;margin-bottom:4px}.turnSub{color:#a7bac7;font-size:11px;min-height:25px}.diceRow{display:flex;justify-content:center;align-items:center;gap:23px;margin:10px 0}.dieShell{perspective:460px;display:grid;place-items:center;width:86px;height:88px}.die{height:75px;width:75px;border-radius:16px;background:linear-gradient(143deg,#fffefb,#d8e3e5);box-shadow:0 10px 17px #0007, inset 0 3px #fff,inset 0 -5px #a5b3c4;border:2px solid #f5f3e9;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);padding:10px;gap:4px;transition:transform .1s}.die.rolling{animation:diceTumble .28s linear infinite}@keyframes diceTumble{0%{transform:rotate(-12deg) scale(.9) rotateY(-17deg)}50%{transform:rotate(22deg) scale(1.14) rotateY(21deg)}100%{transform:rotate(-12deg) scale(.9) rotateY(-17deg)}}.pip{border-radius:50%;align-self:center;justify-self:center;width:12px;height:12px;background:#304d58;box-shadow:inset 0 2px #172d34}.dieSix .pip{background:#b48035}.rollBtn{width:100%;max-width:260px;border:0;border-radius:13px;background:linear-gradient(115deg,#f9e3a8,#d7a052);padding:13px;color:#2f261b;font-size:13px;font-weight:950;letter-spacing:1px;box-shadow:0 5px 15px #e9b75c33}.rollBtn:active:not(:disabled){transform:translateY(2px)}.hint{font-size:11px;min-height:34px;color:#b8cbd5;margin-top:11px;line-height:1.5}.chooseArea{text-align:left;margin-top:12px}.chooseTitle{font-size:11px;color:#e7c888;letter-spacing:1px;font-weight:850;margin-bottom:8px}.tokenOptions{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.tokenOpt{border:1px solid #a9b8b855;border-radius:10px;background:#27404c;color:#fff;font-size:11px;font-weight:780;padding:12px 8px}.tokenOpt:active{background:#4c6a71}.pauseBtn,.smallBtn{background:#263c4c;border:1px solid #70828d;border-radius:10px;padding:10px 13px;font-size:11px;font-weight:800}.timerMeter{height:5px;overflow:hidden;border-radius:20px;background:#0b1520;margin-top:10px}.timerFill{height:100%;width:100%;background:linear-gradient(90deg,#4cbb9c,#eed06b);transition:width .13s}.activity{padding:12px 14px;min-height:81px}.activity h3{color:#f3d69f;font-size:12px;margin:0 0 8px}.log{font-size:11px;color:#afc2c7;line-height:1.5}.legend{font-size:10px;line-height:1.8;color:#a8beca}.legend span{color:#e6ca83}
+/* Emotional event reactions */
+.eventWrap{position:fixed;top:max(83px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:100;pointer-events:none;width:min(92vw,410px);min-height:0}.event{background:linear-gradient(130deg,#20394b,#1b243a);box-shadow:0 14px 40px #000b,0 0 0 1px #d6b5788c;border:1px solid #ecd090;border-radius:19px;padding:12px 16px;display:flex;gap:12px;align-items:center;animation:eventPop 1.75s cubic-bezier(.2,1,.3,1) forwards}.event.kill{border-color:#ff8e7d;background:linear-gradient(130deg,#482631,#263445)}.event.miss{border-color:#edc677}.event.win{border-color:#f7d789}.eventIcon{font-size:31px;filter:drop-shadow(0 3px 6px #0007)}.eventTitle{font-family:Georgia,serif;font-size:18px;font-weight:900;color:#ffdf9d}.eventText{font-size:11px;color:#c8d6e1;margin-top:4px}@keyframes eventPop{0%{opacity:0;transform:translateY(-55px) scale(.72) rotate(-3deg)}13%{opacity:1;transform:translateY(4px) scale(1.055) rotate(1deg)}22%{transform:translateY(0) scale(1)}77%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-25px) scale(.95)}}.spark{position:fixed;width:8px;height:8px;border-radius:2px;pointer-events:none;z-index:105;animation:burst .8s ease-out forwards}@keyframes burst{from{opacity:1;transform:translate(0,0) rotate(0deg) scale(1)}to{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(650deg) scale(.45)}}
+.overlay{position:fixed;inset:0;background:#070f1bdc;z-index:200;display:grid;place-items:center;padding:16px;backdrop-filter:blur(8px)}.modal{width:min(440px,96vw);background:linear-gradient(140deg,#263847,#142534);border:1px solid #b59765;border-radius:25px;box-shadow:0 25px 75px #000c;padding:25px;text-align:center}.modal h2{font:900 29px Georgia,serif;color:#f8dfae;margin:8px 0}.modal p{color:#c0d0d8;font-size:13px;line-height:1.7}.modal .startBtn{margin:12px 0 5px}.modal .smallBtn{width:100%;margin:7px 0;padding:13px}.winCrown{font-size:62px;animation:winFloat 1.8s ease-in-out infinite}@keyframes winFloat{50%{transform:translateY(-12px) rotate(5deg)}}
+@media(min-width:770px){.shell{padding:0 23px 28px}.gameBoardCol{max-width:660px}}
+@media(max-width:769px){.head{height:66px}.hero{gap:6px;grid-template-columns:1fr 175px;padding:16px 0 22px}.heroArt{height:169px}.artBoard{width:145px;height:145px;border-width:7px;border-radius:13px}.artPiece{width:28px;height:28px}.artGlow{width:170px;height:170px}.floatingDie{font-size:23px;padding:9px;right:-3px;bottom:0}.lobbyGrid{grid-template-columns:1fr}.gameStage{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr;align-items:start}.scoreCard{grid-template-columns:1fr}.diceCard{grid-row:span 2}.activity{min-height:auto}.legend{display:none}.boardFrame{max-width:630px;margin:0 auto}.gameTop{margin-top:0}.gameBoardCol{width:100%}}
+@media(max-width:510px){.shell{padding:0 9px 18px}.head{height:61px}.brandText{font-size:19px}.brandText small{font-size:8px}.crest{width:36px;height:41px;font-size:20px}.hero{grid-template-columns:1fr 125px;padding-top:8px}.hero h1{font-size:33px;margin:9px 0}.hero p{font-size:11px}.heroArt{height:135px}.artBoard{height:107px;width:107px;border-width:5px}.artGlow{height:130px;width:130px}.artPiece{height:19px;width:19px;border-width:3px}.floatingDie{font-size:21px}.kicker{font-size:9px}.card{padding:15px}.boardFrame{padding:5px;border-radius:12px;border-width:1px}.boardInner{border:2px solid #755d3c;border-radius:6px}.gameStage{gap:9px}.side{display:flex;flex-direction:column;gap:8px}.scoreCard{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.playerTile{display:flex;flex-direction:column;gap:5px;padding:7px 4px;text-align:center;border-radius:9px}.playerChip{height:20px;width:20px;font-size:10px}.playerTxt b{font-size:9px}.playerTxt small{font-size:8px}.diceCard{display:grid;grid-template-columns:1fr 77px 1.2fr;align-items:center;column-gap:8px;padding:10px;border-radius:14px;text-align:left}.turnTitle{font-size:15px}.turnSub{font-size:10px;min-height:auto}.diceRow{margin:0;gap:0}.dieShell{height:66px;width:69px}.die{width:55px;height:55px;padding:6px;gap:2px;border-radius:12px}.pip{width:9px;height:9px}.rollBtn{font-size:11px;padding:13px 6px}.hint{grid-column:1/-1;font-size:10px;min-height:auto;margin-top:2px}.chooseArea{grid-column:1/-1;margin-top:4px}.timerMeter{grid-column:1/-1;margin-top:2px}.activity{padding:9px}.activity h3{margin-bottom:5px}.gameTop .roundTag{font-size:10px}.boardFoot{margin:5px 0;font-size:9px}.eventWrap{top:70px}.eventTitle{font-size:16px}}
+@media(max-height:670px) and (max-width:510px){.head{height:49px}.boardFoot{display:none}.gameTop{margin:0 0 5px}.scoreCard{gap:3px}.playerTile{padding:4px 3px}.diceCard{padding:6px 9px}.diceCard .hint{margin-top:1px}}
+
+
+/* ===== LUDO ROYALE 0.2: premium tabletop edition ===== */
+:root{--gold-light:#fff2c0;--gold-edge:#b98339;--velvet:#0e2028}
+body{background:radial-gradient(ellipse at 50% -22%,#526475 0,#203746 29%,#0c1d2d 65%,#08121f 100%)}
+body:before{background-image:repeating-linear-gradient(96deg,#ffffff05 0px,transparent 2px,transparent 71px),radial-gradient(#fbcc6138 1px,transparent 1px);background-size:auto,45px 45px;opacity:.25}
+#gameScene{position:relative}
+#gameScene:before{content:"";z-index:-1;position:absolute;inset:42px -10px auto;height:min(69vw,730px);background:radial-gradient(ellipse at center,#bd87412e,transparent 70%);filter:blur(20px);pointer-events:none}
+.gameTop .roundTag{color:#ffde9a;text-shadow:0 0 22px #f7b1514f}
+.gameStage{gap:22px}
+.boardPresentation{position:relative;padding:13px;background:linear-gradient(146deg,#53646c 0%,#172b35 32%,#1b2b36 75%,#56606a 100%);border-radius:33px;box-shadow:0 24px 42px #000b,0 4px 0 #09151b,inset 0 2px #d9e7e338,inset 0 -4px #0008;isolation:isolate}
+.boardPresentation:before{content:"";pointer-events:none;position:absolute;inset:4px;border-radius:30px;border:1px solid #ddc18355;box-shadow:inset 0 0 0 1px #14191c,0 0 0 1px #0007}
+.boardPresentation:after{content:"";pointer-events:none;position:absolute;inset:16px;border-radius:18px;border:2px solid #fff8d520;box-shadow:0 0 13px #0005}
+.boardPresentation .royalCorner{position:absolute;z-index:3;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 28%,#fff2bd,#c99342 55%,#805526 100%);border:2px solid #f0dbaa;box-shadow:0 4px 8px #000a,inset 0 -2px #6e451f;color:#684519;font-size:13px;pointer-events:none}
+.boardPresentation .rc1{top:2px;left:2px}.boardPresentation .rc2{top:2px;right:2px}.boardPresentation .rc3{bottom:2px;left:2px}.boardPresentation .rc4{bottom:2px;right:2px}
+.boardFrame{margin:0;max-width:none;position:relative;overflow:hidden;padding:11px;border:1px solid #fedb93;border-radius:19px;background:linear-gradient(146deg,#fff0bb 0,#af7734 8%,#dba861 18%,#84572c 50%,#f7dfab 81%,#9c692e 100%);box-shadow:0 3px 0 #684322,0 15px 24px #0009,inset 0 4px 3px #fff8,inset 0 -4px 4px #593713}
+.boardFrame:before{content:"";pointer-events:none;position:absolute;inset:4px;border-radius:16px;border:2px solid #fff8cb70;box-shadow:inset 0 0 9px #3c2210}
+.boardInner{border:3px solid #4b3124;border-radius:10px;box-shadow:0 0 0 2px #f8d790,0 2px 10px #2812059c,inset 0 2px 4px #fff8;overflow:hidden}
+.boardInner canvas{border-radius:5px;background:#ead7b3;image-rendering:auto;filter:saturate(1.06) contrast(1.04)}
+.boardFoot{font-weight:680;color:#dfca9c;letter-spacing:.14px;margin:13px 0 4px}
+.side .diceCard{position:relative;overflow:hidden;background:linear-gradient(145deg,#2a3946 0%,#0f2534 50%,#112532 100%);border:1px solid #a48b61;border-radius:24px;box-shadow:0 16px 31px #0008,inset 0 2px #ffffff23,inset 0 0 0 3px #ffffff05;padding:18px 14px}
+.side .diceCard:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 50%,#bca4741a,transparent 67%)}
+.side .turnTitle{color:#ffe1a4;letter-spacing:.6px;font-size:21px;text-shadow:0 2px 10px #0006}
+.side .turnSub{color:#c4d0d2;margin-top:4px}
+.diceRow{margin:13px 0 12px;perspective:760px}
+.diceArena{height:157px;width:100%;position:relative;isolation:isolate;overflow:hidden;display:grid;place-items:center;border-radius:20px;border:2px solid #be9860;background:radial-gradient(ellipse at 50% 43%,#476065 0%,#1d3139 45%,#0b1b26 97%);box-shadow:inset 0 6px 16px #0009,inset 0 -2px 2px #f4d6a644,0 3px 0 #081521,0 9px 15px #0006}
+.diceArena:before{content:"";inset:9px;position:absolute;border-radius:14px;border:1px solid #dbbe8650;box-shadow:inset 0 0 0 3px #ffffff05;pointer-events:none}
+.diceArena .trayTitle{position:absolute;top:11px;text-align:center;width:100%;font-size:9px;letter-spacing:2.4px;color:#f0d7a6a0;font-weight:900}
+.diceArena .trayLine{position:absolute;bottom:12px;width:44%;height:2px;background:linear-gradient(90deg,transparent,#e8b9737c,transparent)}
+.trayHalo{position:absolute;top:42px;width:125px;height:95px;border-radius:50%;background:radial-gradient(ellipse,#fbf0bb20,transparent 73%);filter:blur(4px)}
+.diceArena .dieShell{perspective:420px;position:absolute;z-index:2;top:65px;left:50%;width:66px;height:66px;transform:translateX(-50%);overflow:visible}
+.diceArena .dieShadow{position:absolute;z-index:1;left:50%;top:112px;height:18px;width:75px;border-radius:50%;background:#000b;transform:translateX(-50%);filter:blur(7px);opacity:.78;transition:filter .15s,opacity .15s}
+.diceArena .die{display:block;position:relative;height:58px;width:58px;margin:3px auto;transform-style:preserve-3d;transition:none!important;border:0;background:none;box-shadow:none;border-radius:0;padding:0;gap:0;will-change:transform;--endX:-14deg;--endY:19deg}
+.diceArena .die .cubeFace{position:absolute;inset:0;background:linear-gradient(145deg,#ffffff 4%,#fffcf0 45%,#d7dad8 100%);border:2px solid #fdf0d0;border-radius:11px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:9px;gap:2px;backface-visibility:hidden;box-shadow:inset -4px -4px 7px #8592a77a,inset 2px 2px 4px #fff,0 0 2px #0009}
+.diceArena .die .cubeFace:nth-child(1){transform:translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(2){transform:rotateX(-90deg) translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(3){transform:rotateY(90deg) translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(4){transform:rotateY(-90deg) translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(5){transform:rotateX(90deg) translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(6){transform:rotateY(180deg) translateZ(29px)}
+.diceArena .die .cubeFace .pip{display:block;background:radial-gradient(circle at 40% 29%,#536877,#253947 78%,#142430 100%);width:9px;height:9px;box-shadow:inset 0 2px 3px #0007,0 1px #fff8;justify-self:center;align-self:center}
+.diceArena .die .cubeFace:nth-child(6) .pip{background:radial-gradient(circle at 40% 29%,#cb9040,#76461d)}
+.diceArena .die.rolling{animation:royalPhysicalThrow .67s linear both!important}
+.diceArena .die.rolling .cubeFace{box-shadow:inset -4px -4px 8px #526171b8,inset 2px 2px 4px #fff}
+.diceArena .dieShadow.rolling{animation:royalShadow .67s linear both}
+@keyframes royalPhysicalThrow{
+ 0%{transform:translate3d(-45px,1px,0) rotateX(-45deg) rotateY(20deg) rotateZ(-29deg) scale(.92)}
+ 16%{transform:translate3d(-22px,-39px,9px) rotateX(160deg) rotateY(225deg) rotateZ(64deg) scale(1.1)}
+ 34%{transform:translate3d(29px,-20px,2px) rotateX(310deg) rotateY(436deg) rotateZ(-28deg) scale(1.01)}
+ 48%{transform:translate3d(43px,-3px,0) rotateX(450deg) rotateY(582deg) rotateZ(28deg) scale(.9)}
+ 65%{transform:translate3d(5px,-19px,2px) rotateX(586deg) rotateY(718deg) rotateZ(-14deg) scale(1.04)}
+ 82%{transform:translate3d(-8px,-4px,0) rotateX(687deg) rotateY(830deg) rotateZ(5deg) scale(.97)}
+ 92%{transform:translate3d(3px,-10px,0) rotateX(720deg) rotateY(899deg) rotateZ(0) scale(1.02)}
+ 100%{transform:translate3d(0,0,0) rotateX(var(--endX)) rotateY(var(--endY)) rotateZ(0) scale(1)}
+}
+@keyframes royalShadow{0%{transform:translateX(calc(-50% - 45px)) scale(.78);filter:blur(5px);opacity:.85}18%{transform:translateX(calc(-50% - 22px)) scale(.5);filter:blur(14px);opacity:.45}48%{transform:translateX(calc(-50% + 43px)) scale(.9);filter:blur(5px);opacity:.83}66%{transform:translateX(calc(-50% + 5px)) scale(.6);filter:blur(12px);opacity:.5}100%{transform:translateX(-50%) scale(1);filter:blur(7px);opacity:.78}}
+.rollBtn{position:relative;background:linear-gradient(145deg,#fff0bd,#e1b965 49%,#b98438);border:1px solid #f5deac;box-shadow:0 5px 0 #8f5f2a,0 9px 20px #0007,inset 0 2px #fff8;font-size:14px;letter-spacing:1.1px;text-shadow:0 1px #fff5}
+.rollBtn:active:not(:disabled){transform:translateY(4px);box-shadow:0 1px 0 #8f5f2a,0 4px 11px #0007}
+.playerTile{background:linear-gradient(125deg,#28394a,#112536);border-color:#647080;box-shadow:inset 0 1px #fff2,0 4px 13px #0003}
+.playerChip{background-blend-mode:screen;box-shadow:inset 0 3px 3px #fff9,inset 0 -5px 4px #0005,0 4px 9px #0006}
+.tokenOpt{background:linear-gradient(135deg,#324d60,#142937);border:1px solid #d0b37f78;box-shadow:inset 0 1px #ffffff26}
+@media(max-width:769px){.boardPresentation{max-width:650px;margin:0 auto}.diceArena{height:127px}.diceArena .dieShell{top:47px}.diceArena .dieShadow{top:94px}.side .diceCard{padding:12px 11px}.diceRow{margin:8px 0 10px}}
+@media(max-width:510px){.boardPresentation{padding:8px;border-radius:19px}.boardFrame{padding:6px;border-radius:12px}.boardInner{border-width:2px;border-radius:7px}.boardPresentation:after{inset:9px}.boardPresentation .royalCorner{width:15px;height:15px;font-size:8px;border-width:1px}.diceArena{height:100px;border-radius:14px}.diceArena .dieShell{top:32px;transform:translateX(-50%) scale(.72);transform-origin:top center}.diceArena .dieShadow{top:76px;width:49px}.diceArena .trayTitle{font-size:7px;top:6px}.side .turnTitle{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.diceArena .die.rolling{animation-duration:.67s!important}.diceArena .dieShadow.rolling{animation-duration:.67s}}
+
+
+/* Larger physical dice theater, phone-safe button placement, polished royal lobby art */
+.heroArt{perspective:820px;overflow:visible}
+.heroBoardBlock{position:absolute;z-index:1;width:219px;height:219px;transform:rotate(-11deg) rotateX(13deg) rotateY(-10deg);transform-style:preserve-3d;box-shadow:0 16px 18px #000a,0 24px 30px #0006;border:8px ridge #e2bd78;border-radius:13px;overflow:hidden;background:#1d3345}
+.heroBoardBlock:before{content:"";pointer-events:none;position:absolute;inset:0;z-index:2;box-shadow:inset 0 0 0 3px #fff6d088,inset 0 14px 14px #fff7;border-radius:4px}
+.heroBoardBlock canvas{height:100%;width:100%;display:block}
+.heroBoardSeal{position:absolute;z-index:2;bottom:7px;right:5px;color:#ffe1a4;text-shadow:0 2px 4px #000b}
+.heroDice{z-index:3;position:absolute;bottom:-4px;right:8px;font-size:37px;color:#fff2df;text-shadow:0 7px 8px #000a;transform:rotate(15deg)}
+@media(max-width:769px){
+ .side{display:flex;flex-direction:column;gap:11px}
+ .side .scoreCard{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .side .diceCard{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(137px,43%);grid-template-areas:'turn tray' 'roll tray' 'hint hint' 'choose choose' 'timer timer';gap:8px 12px;padding:15px;text-align:left;align-items:center}
+ .side .diceCard>div:first-child{grid-area:turn}
+ .side .diceCard .diceRow{grid-area:tray;width:100%;margin:0}
+ .side .diceCard .rollBtn{grid-area:roll;max-width:100%;width:100%}
+ .side .diceCard .hint{grid-area:hint;margin:0;min-height:0}
+ .side .diceCard .chooseArea{grid-area:choose;margin:0}
+ .side .diceCard .timerMeter{grid-area:timer;margin:0}
+ .side .diceCard .diceArena{height:154px}
+ .side .diceArena .dieShell{top:63px}
+ .side .diceArena .dieShadow{top:114px}
+ .side .turnTitle{font-size:18px}
+}
+@media(max-width:510px){
+ .heroBoardBlock{width:116px;height:116px;border-width:5px;border-radius:8px}
+ .heroDice{font-size:21px;bottom:7px;right:-4px}
+ .side .diceCard{padding:10px;gap:5px 8px;grid-template-columns:minmax(0,1fr) minmax(125px,42%);border-radius:16px}
+ .side .diceCard .diceArena{height:131px}
+ .side .diceArena .dieShell{top:49px;transform:translateX(-50%) scale(.86)}
+ .side .diceArena .dieShadow{top:102px}
+ .side .diceCard .rollBtn{padding:12px 6px;font-size:12px}
+ .side .scoreCard{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+ .side .turnTitle{font-size:15px}
+}
+@media(max-width:355px){.side .diceCard{grid-template-columns:minmax(0,1fr) minmax(112px,41%)}.side .diceCard .diceArena{height:124px}.side .diceArena .dieShell{transform:translateX(-50%) scale(.72);top:48px}.side .diceArena .dieShadow{top:98px}}
+
+</style></head>
+<body><div class="shell">
+<header class="head"><div class="brandBlock"><div class="crest">♛</div><div class="brandText">LUDO ROYALE<small>BY PLAYNOVA • PREMIUM BOARD GAMES</small></div></div><div class="headTools"><button class="iconBtn" id="soundBtn" title="Toggle audio" aria-label="Toggle audio">🔊</button><button class="iconBtn" id="menuBtn" title="Game menu" aria-label="Game menu">☰</button></div></header>
+<section id="lobby">
+ <div class="hero"><div><span class="kicker">THE ROYAL TABLE AWAITS</span><h1>Roll. Rival.<br><span style="color:#f0c778">Rule the board.</span></h1><p>Classic Ludo, reimagined with satisfying moves, clever rivals, bold captures and animated reactions. One board. Endless rivalries.</p></div><div class="heroArt"><div class="artGlow"></div><div class="heroBoardBlock"><canvas id="lobbyBoard" width="750" height="750" aria-hidden="true"></canvas><div class="heroBoardSeal">♛</div></div><div class="heroDice">⚄</div></div></div>
+ <div class="lobbyGrid">
+ <div class="card"><h2 class="cardTitle">♛ Set the table</h2><span class="sectionLabel">PLAY MODE</span><div class="seg" id="modeButtons"><button class="selected" data-mode="ai">♟ Player vs AI</button><button data-mode="local">♟ Local Friends</button></div>
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px"><label><span class="sectionLabel">PLAYERS</span><select id="playerCount" class="select"><option value="2">2 players</option><option value="3">3 players</option><option value="4">4 players</option></select></label><label id="difficultyBox"><span class="sectionLabel">AI DIFFICULTY</span><select id="difficulty" class="select"><option value="easy">Easy</option><option value="normal" selected>Normal</option><option value="hard">Hard</option></select></label></div>
+ <span class="sectionLabel">YOUR TOKEN COLOR</span><div id="colorButtons" class="colorPick"></div><span class="sectionLabel">PLAYER NAMES</span><div class="names" id="playerNames"></div>
+ <button id="startGame" class="startBtn">♛ ENTER THE ROYALE →</button></div>
+ <div class="card"><h2 class="cardTitle">✦ Match rules</h2><span class="sectionLabel">RULE PRESET</span><div class="seg" id="presetButtons"><button data-preset="standard" class="selected">Classic Standard</button><button data-preset="custom">Custom Match</button></div>
+ <p class="rulesInfo">A six opens a token and grants another roll. Land on a rival to send them back to base; protected squares stay safe. You must roll exactly to finish.</p>
+ <div class="rulesGrid" id="customRules"><label class="checkrow"><span>Six earns extra roll<small>After a regular move</small></span><input type="checkbox" data-rule="sixBonus" checked disabled></label><label class="checkrow"><span>Capture earns extra roll<small>Reward a successful capture</small></span><input type="checkbox" data-rule="captureBonus" checked disabled></label><label class="checkrow"><span>Three sixes lose turn<small>No move on third six</small></span><input type="checkbox" data-rule="threeSix" checked disabled></label><label class="checkrow"><span>Quick entry: 1 or 6<small>Open a token with either</small></span><input type="checkbox" data-rule="quickEntry" disabled></label><label class="checkrow"><span>15-second turn timer<small>Auto-move when time runs out</small></span><input type="checkbox" data-rule="timer" disabled></label><label class="checkrow"><span>Protected star squares<small>No capture on safe cells</small></span><input type="checkbox" data-rule="safe" checked disabled></label></div>
+ </div></div><p class="privacy">✦ Offline playable · No accounts · Real dice rolls · Your move, your story ✦</p>
+</section>
+<section id="gameScene" class="hidden"><div class="gameTop"><div><div class="roundTag">♛ THE ROYAL ARENA</div><div class="gameStatus" id="matchLabel">CLASSIC • 2 PLAYERS</div></div><button class="pauseBtn" id="pauseGame">Ⅱ PAUSE</button></div>
+ <div class="gameStage"><div class="gameBoardCol"><div class="boardPresentation"><div class="royalCorner rc1">✦</div><div class="royalCorner rc2">✦</div><div class="royalCorner rc3">✦</div><div class="royalCorner rc4">✦</div><div class="boardFrame"><div class="boardInner"><canvas id="board" width="750" height="750" role="button" aria-label="Ludo board. Tap highlighted tokens to move."></canvas></div></div></div><div class="boardFoot">✦ Tap a glowing token to move it · Exact roll to finish ✦</div></div>
+ <div class="side"><div class="scoreCard" id="playerTiles"></div><div class="diceCard"><div><div class="turnTitle" id="currentTitle">RED'S TURN</div><div class="turnSub" id="turnSub">Roll the dice to begin.</div></div><div class="diceRow"><div class="diceArena" id="diceArena"><div class="trayTitle">ROYAL DICE ARENA</div><div class="trayHalo"></div><div class="dieShadow" id="dieShadow"></div><div class="dieShell"><div class="die" id="die"></div></div><div class="trayLine"></div></div></div><button class="rollBtn" id="rollDice">🎲 ROLL DICE</button><div id="hint" class="hint">A six lets you open a token.</div><div class="chooseArea hidden" id="chooseArea"><div class="chooseTitle">SELECT A TOKEN TO MOVE</div><div class="tokenOptions" id="tokenChoices"></div></div><div class="timerMeter hidden" id="timerMeter"><div class="timerFill" id="timerFill"></div></div></div><div class="card activity"><h3>✧ ROYAL ANNOUNCER</h3><div class="log" id="activityLog">Welcome to the board. May the boldest player win!</div></div><div class="card legend"><span>★</span> Star squares are protected.<br><span>♛</span> The first player to bring all four tokens home wins.<br><span>✨</span> Capture, six rolls and finishing may award extra turns.</div></div></div>
+</section>
+</div>
+<div id="eventWrap" class="eventWrap" aria-live="polite"></div>
+<div id="pauseOverlay" class="overlay hidden"><div class="modal"><div style="font-size:46px">♟</div><h2>Match Paused</h2><p>The board will wait for you. Your rivals have nowhere to run.</p><button id="resumeGame" class="startBtn">▶ RESUME MATCH</button><button id="restartGame" class="smallBtn">↻ RESTART MATCH</button><button id="exitGame" class="smallBtn">← BACK TO LOBBY</button></div></div>
+<div id="winOverlay" class="overlay hidden"><div class="modal"><div class="winCrown">👑</div><h2 id="winnerTitle">ROYAL VICTORY!</h2><p id="winnerDesc">A worthy champion has conquered the board.</p><button id="playAgain" class="startBtn">♛ PLAY AGAIN</button><button id="winnerLobby" class="smallBtn">← BACK TO LOBBY</button></div></div>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const COLORS={red:{name:'Ruby Red',hex:'#d84949',soft:'#f5a9a3',dark:'#962e32',offset:0},green:{name:'Emerald Green',hex:'#20a078',soft:'#95e0c4',dark:'#0e7255',offset:13},yellow:{name:'Golden Yellow',hex:'#e9af31',soft:'#ffe7a3',dark:'#ac7919',offset:26},blue:{name:'Sapphire Blue',hex:'#3788d8',soft:'#aed9ff',dark:'#235caa',offset:39}};
+const COLOR_ORDER=['red','green','yellow','blue'];
+const TRACK=[[6,1],[6,2],[6,3],[6,4],[6,5],[5,6],[4,6],[3,6],[2,6],[1,6],[0,6],[0,7],[0,8],[1,8],[2,8],[3,8],[4,8],[5,8],[6,9],[6,10],[6,11],[6,12],[6,13],[6,14],[7,14],[8,14],[8,13],[8,12],[8,11],[8,10],[8,9],[9,8],[10,8],[11,8],[12,8],[13,8],[14,8],[14,7],[14,6],[13,6],[12,6],[11,6],[10,6],[9,6],[8,5],[8,4],[8,3],[8,2],[8,1],[8,0],[7,0],[6,0]];
+// Step 0-50: outer track (51 squares), 51-55: own home lane, 56: finished center.
+const HOME={red:[[7,1],[7,2],[7,3],[7,4],[7,5]],green:[[1,7],[2,7],[3,7],[4,7],[5,7]],yellow:[[7,13],[7,12],[7,11],[7,10],[7,9]],blue:[[13,7],[12,7],[11,7],[10,7],[9,7]]};
+const DOCK={red:[[2,2],[2,4],[4,2],[4,4]],green:[[2,10],[2,12],[4,10],[4,12]],yellow:[[10,10],[10,12],[12,10],[12,12]],blue:[[10,2],[10,4],[12,2],[12,4]]};
+const SAFE=new Set([0,8,13,21,26,34,39,47]);
+const canvas=$('board'),ctx=canvas.getContext('2d');const C=50,W=750;let scene='lobby',mode='ai',preset='standard',count=2,difficulty='normal',humanColor='red';let custom={sixBonus:true,captureBonus:true,threeSix:true,quickEntry:false,timer:false,safe:true};let playerNamesByMode={ai:['You'],local:['You','Player 2','Player 3','Player 4']};let players=[],rules={},turn=0,phase='idle',dice=1,streak=0,legal=[],lastRoll=0,rollNumber=0,animation=null,renderTokens=[],particles=[],latestEvent=0,transitionTicket=0,moveTicket=0,aiWait=null,rollWait=null,turnDeadline=0,pendingWait=null,gameOver=false,paused=false,actLog='';let canvasRect=null;
+const DEBUG=location.search.includes('debug=1');
+function randDie(){return 1+Math.floor(Math.random()*6)}
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const nName=s=>String(s||'').replace(/[<>]/g,'').trim().slice(0,16);
+function savePrefs(){try{localStorage.setItem('ludo_royale_prefs',JSON.stringify({mode,preset,count,difficulty,humanColor,custom,playerNamesByMode}))}catch(e){}}
+function loadPrefs(){try{const d=JSON.parse(localStorage.getItem('ludo_royale_prefs')||'null');if(!d)return;if(['ai','local'].includes(d.mode))mode=d.mode;if(['standard','custom'].includes(d.preset))preset=d.preset;if([2,3,4].includes(Number(d.count)))count=+d.count;if(['easy','normal','hard'].includes(d.difficulty))difficulty=d.difficulty;if(COLOR_ORDER.includes(d.humanColor))humanColor=d.humanColor;if(d.custom)Object.keys(custom).forEach(k=>{if(typeof d.custom[k]==='boolean')custom[k]=d.custom[k]});if(d.playerNamesByMode){for(const m of ['ai','local'])if(Array.isArray(d.playerNamesByMode[m]))playerNamesByMode[m]=d.playerNamesByMode[m].map(v=>nName(v))}}catch(e){}}
+loadPrefs();
+function chosenColors(){const pivot=COLOR_ORDER.indexOf(humanColor);const arr=COLOR_ORDER.map((_,i)=>COLOR_ORDER[(pivot+i)%4]);return count===2?[arr[0],arr[2]]:arr.slice(0,count)}
+function refreshLobby(){[...document.querySelectorAll('[data-mode]')].forEach(b=>b.classList.toggle('selected',b.dataset.mode===mode));[...document.querySelectorAll('[data-preset]')].forEach(b=>b.classList.toggle('selected',b.dataset.preset===preset));$('playerCount').value=count;$('difficulty').value=difficulty;$('difficultyBox').classList.toggle('hidden',mode==='local');const cols=chosenColors();$('colorButtons').innerHTML=COLOR_ORDER.map(col=>`<button type="button" data-pick-color="${col}" class="${col===humanColor?'selected':''}"><span class="swatch" style="background:${COLORS[col].hex}"></span>${{red:'RUBY',green:'EMERALD',yellow:'GOLD',blue:'SAPPHIRE'}[col]}</button>`).join('');[...$('colorButtons').querySelectorAll('button')].forEach(b=>b.onclick=()=>{humanColor=b.dataset.pickColor;refreshLobby()});
+ $('playerNames').innerHTML=cols.map((col,i)=>{const isBot=mode==='ai'&&i>0;const raw=isBot?'Royal Bot '+i:(playerNamesByMode[mode][i]||((i===0)?'You':'Player '+(i+1)));return `<label class="nameField"><span class="nameDot" style="color:${COLORS[col].hex};background:${COLORS[col].hex}"></span><input data-color="${col}" data-slot="${i}" aria-label="${col} player name" maxlength="16" ${isBot?'disabled':''} value="${esc(raw)}"></label>`}).join('');
+ [...$('playerNames').querySelectorAll('input:not(:disabled)')].forEach(el=>el.addEventListener('input',()=>{playerNamesByMode[mode][Number(el.dataset.slot)]=nName(el.value);savePrefs()}));[...document.querySelectorAll('[data-rule]')].forEach(el=>{el.disabled=preset==='standard';el.checked=preset==='standard'?({sixBonus:true,captureBonus:true,threeSix:true,quickEntry:false,timer:false,safe:true})[el.dataset.rule]:custom[el.dataset.rule]});savePrefs()}
+[...document.querySelectorAll('[data-mode]')].forEach(b=>b.onclick=()=>{mode=b.dataset.mode;refreshLobby()});[...document.querySelectorAll('[data-preset]')].forEach(b=>b.onclick=()=>{preset=b.dataset.preset;refreshLobby()});$('playerCount').onchange=e=>{count=+e.target.value;refreshLobby()};$('difficulty').onchange=e=>{difficulty=e.target.value;savePrefs()};[...document.querySelectorAll('[data-rule]')].forEach(el=>el.onchange=()=>{custom[el.dataset.rule]=el.checked;savePrefs()});
+function currentRules(){return preset==='standard'?{sixBonus:true,captureBonus:true,threeSix:true,quickEntry:false,timer:false,safe:true}:{...custom}}
+let audio=null,sound=true,volume=.68;
+function getAppSoundSettings(){try{const s=JSON.parse(localStorage.getItem('pn_app_settings')||'null');if(s){sound=s.sound!==false;volume=clamp(Number(s.volume??90)/100,0,1)}else{sound=localStorage.getItem('ludo_royale_sound')!=='off'}}catch(e){}$('soundBtn').textContent=sound?'🔊':'🔇'}
+getAppSoundSettings();
+function audioReady(){if(!sound)return null;try{if(!audio){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;audio=new AC()}if(audio.state==='suspended')audio.resume().catch(()=>{});return audio}catch(e){return null}}
+function note(freq,dur=.11,type='sine',loud=.35,when=0){const a=audioReady();if(!a||a.state!=='running')return;try{const t=a.currentTime+when;const o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);o.frequency.exponentialRampToValueAtTime(freq*.96,t+dur);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.min(.18,loud*.25*volume),t+.013);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+dur+.01)}catch(e){}}
+function sfx(type){if(type==='roll'){note(290,.085,'triangle',.32);note(410,.07,'triangle',.24,.1);note(480,.14,'triangle',.24,.23)}if(type==='step')note(440+Math.random()*90,.064,'sine',.14);if(type==='six'){note(580,.13,'triangle',.30);note(770,.17,'triangle',.38,.12);note(990,.19,'sine',.4,.24)}if(type==='capture'){note(490,.10,'square',.25);note(340,.16,'sawtooth',.32,.13);note(210,.23,'triangle',.40,.28)}if(type==='miss')note(260,.12,'triangle',.32);if(type==='finish'){note(540,.14,'sine',.4);note(720,.14,'sine',.4,.12);note(930,.2,'triangle',.4,.27)}if(type==='win'){[523,659,784,1047].forEach((f,i)=>note(f,.33,'triangle',.34,i*.15))}}
+$('soundBtn').onclick=()=>{sound=!sound;try{localStorage.setItem('ludo_royale_sound',sound?'on':'off')}catch(e){}$('soundBtn').textContent=sound?'🔊':'🔇';if(sound){audioReady();sfx('six')}};
+const PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+const DICE_POSE={1:[-14,19],2:[90,8],3:[0,-90],4:[0,90],5:[-90,9],6:[0,180]};
+function dieFaces(){return [1,2,3,4,5,6].map(n=>`<div class="cubeFace" data-face="${n}">${Array.from({length:9},(_,i)=>PIPS[n].includes(i)?'<i class="pip"></i>':'<i></i>').join('')}</div>`).join('')}
+const royalDie=$('die');royalDie.innerHTML=dieFaces();
+let royalThrowResult=1;
+function dicePose(n){const pose=DICE_POSE[n]||DICE_POSE[1];royalDie.style.setProperty('--endX',pose[0]+'deg');royalDie.style.setProperty('--endY',pose[1]+'deg');return `rotateX(${pose[0]}deg) rotateY(${pose[1]}deg)`}
+function drawDie(n){if(phase==='rolling')return;royalDie.classList.remove('rolling');$('dieShadow').classList.remove('rolling');royalDie.style.transform=dicePose(n)}
+function startRoyalThrow(result){royalThrowResult=result;dicePose(result);royalDie.style.transform='';royalDie.classList.remove('rolling');$('dieShadow').classList.remove('rolling');void royalDie.offsetWidth;royalDie.classList.add('rolling');$('dieShadow').classList.add('rolling')}
+function settleRoyalThrow(n){royalDie.classList.remove('rolling');$('dieShadow').classList.remove('rolling');royalDie.style.transform=dicePose(n)}
+function log(message){actLog=message;$('activityLog').textContent=message}
+function burst(col,amount=16,x=.5,y=.38){for(let i=0;i<amount;i++){const e=document.createElement('span');e.className='spark';e.style.left=(x*100)+'vw';e.style.top=(y*100)+'vh';e.style.background=col;e.style.setProperty('--dx',((Math.random()-.5)*260)+'px');e.style.setProperty('--dy',((Math.random()-.5)*220-25)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),840)}}
+const LINES={kill:[['💥','BACK TO BASE!','That token just took the express ride home.'],['⚔️','ROYAL TAKEDOWN!','One brave move. One very long walk back.'],['🚀','SEE YOU AT BASE!','The board has spoken!']],miss:[['😏','OH, YOU MISSED!','A capture was right there…'],['👀','SO CLOSE!','That rival just escaped a royal ambush.'],['🫣','MISSED YOUR CHANCE!','The throne demands sharper moves.']],six:[['🎲','LUCKY SIX!','The dice have crowned this roll.'],['✨','SIX! ANOTHER SHOT!','The table is on your side.']],safe:[['🛡️','SAFE & SOUND!','A smart stop on a protected square.']],finish:[['🏅','HOME SWEET HOME!','One token closer to the crown.'],['🏁','ROYAL ARRIVAL!','That token finished in style.']],win:[['👑','ALL HAIL THE CHAMPION!','The crown has a new owner!']],triple:[['😵','THREE SIXES!','Too much luck: your turn is forfeited.']],no:[['🎯','NO LEGAL MOVE!','The dice will give you another chance.']]};
+function event(type,who=''){const options=LINES[type];if(!options)return;const v=options[Math.floor(Math.random()*options.length)];const e=document.createElement('div');e.className='event '+type;e.innerHTML=`<div class="eventIcon">${v[0]}</div><div><div class="eventTitle">${v[1]}</div><div class="eventText">${who?who+' · ':''}${v[2]}</div></div>`;$('eventWrap').replaceChildren(e);latestEvent++;let own=latestEvent;setTimeout(()=>{if(own===latestEvent)$('eventWrap').replaceChildren()},1800);if(['kill','finish','win','six'].includes(type))burst(type==='kill'?'#f47966':'#efd082',type==='win'?45:16)}
+function setupPlayers(){let cols=chosenColors();players=cols.map((color,i)=>{const input=$('playerNames').querySelector(`[data-color="${color}"]`);return{color,name:mode==='ai'&&i>0?'Royal Bot '+i:nName(input?.value)||(i===0?'You':'Player '+(i+1)),bot:mode==='ai'&&i>0,pieces:[-1,-1,-1,-1]}})}
+function createTiles(){const nodes=players.map((p,i)=>{let c=COLORS[p.color];return `<div class="playerTile" id="tile${i}"><div class="playerChip" style="background:linear-gradient(145deg,${c.soft},${c.hex} 48%,${c.dark})">♟</div><div class="playerTxt"><b>${esc(p.name)}</b><small id="done${i}">0/4 Home</small></div></div>`});$('playerTiles').innerHTML=nodes.join('')}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function beginGame(){clearTimers();setupPlayers();rules=currentRules();gameOver=false;paused=false;turn=0;streak=0;lastRoll=0;rollNumber=0;phase='ready';pendingWait=null;scene='game';dice=1;transitionTicket++;moveTicket++;animation=null;renderTokens=[];particles=[];$('lobby').classList.add('hidden');$('gameScene').classList.remove('hidden');$('pauseOverlay').classList.add('hidden');$('winOverlay').classList.add('hidden');$('matchLabel').textContent=(preset==='standard'?'CLASSIC STANDARD':'CUSTOM ROYALE')+' • '+players.length+' PLAYERS • '+(mode==='ai'?'VS AI':'LOCAL MATCH');createTiles();drawDie(dice);log('The royal arena is ready. Roll a six to release your first token.');savePrefs();window.scrollTo(0,0);startTurn()}
+$('startGame').onclick=()=>{audioReady();sfx('roll');beginGame()};
+function clearTimers(){clearTimeout(aiWait);clearTimeout(rollWait);aiWait=null;rollWait=null}
+function current(){return players[turn]}
+function absoluteIndex(p,pos){return (COLORS[p.color].offset+pos)%52}
+function finished(p){return p.pieces.filter(v=>v===56).length}
+function posFor(p,pos,idx){if(pos===-1){const [r,c]=DOCK[p.color][idx];return{x:c+.5,y:r+.5}}if(pos===56)return{x:7.5+([-1,1,-1,1][idx])*.24,y:7.5+([-1,-1,1,1][idx])*.24};const [r,c]=pos<=50?TRACK[absoluteIndex(p,pos)]:HOME[p.color][pos-51];return{x:c+.5,y:r+.5}}
+function legalMoves(p,roll){const out=[];p.pieces.forEach((pos,i)=>{if(pos===56)return;if(pos<0){if(roll===6||(rules.quickEntry&&roll===1))out.push(i)}else if(pos+roll<=56)out.push(i)});return out}
+function isSafe(p,pos){return pos>=0&&pos<=50&&rules.safe&&SAFE.has(absoluteIndex(p,pos))}
+function capturesAt(playerIndex,newPos){if(newPos<0||newPos>50||isSafe(players[playerIndex],newPos))return[];const a=absoluteIndex(players[playerIndex],newPos);let results=[];players.forEach((enemy,ei)=>{if(ei===playerIndex)return;enemy.pieces.forEach((pos,k)=>{if(pos>=0&&pos<=50&&absoluteIndex(enemy,pos)===a)results.push({enemy:ei,piece:k})})});return results}
+function threatened(playerIndex,pieceIndex,pos){if(pos<0||pos>=51||isSafe(players[playerIndex],pos))return 0;const idx=absoluteIndex(players[playerIndex],pos);let hits=0;players.forEach((enemy,ei)=>{if(ei===playerIndex)return;enemy.pieces.forEach(v=>{if(v<0||v>50)return;const distance=(idx-absoluteIndex(enemy,v)+52)%52;if(distance>=1&&distance<=6)hits++})});return hits}
+function scoreMove(i,roll){const p=current(),old=p.pieces[i],dest=old===-1?0:old+roll;const captures=capturesAt(turn,dest).length;const danger=threatened(turn,i,dest);const oldDanger=threatened(turn,i,old);let score=Math.random()*6+dest*.15;score+=captures*(difficulty==='hard'?85:45);if(dest===56)score+=difficulty==='hard'?105:65;if(old===-1)score+=difficulty==='hard'?28:20;score+=isSafe(p,dest)?20:0;score+=oldDanger*10;score-=danger*(difficulty==='hard'?25:12);if(old>=0&&dest<56)score+=8;return score}
+function chooseAiMove(choices,roll){if(difficulty==='easy')return choices[Math.floor(Math.random()*choices.length)];let sorted=choices.map(i=>({i,score:scoreMove(i,roll)})).sort((a,b)=>b.score-a.score);if(difficulty==='normal'&&Math.random()<.22)return sorted[Math.floor(Math.random()*Math.min(3,sorted.length))].i;return sorted[0].i}
+function startTurn(){if(gameOver)return;pendingWait=null;phase='ready';legal=[];streak=0;lastRoll=0;turnDeadline=rules.timer&&!current().bot?performance.now()+15000:0;updateUI();if(current().bot)scheduleAI('roll')}
+function updateUI(){if(scene!=='game')return;players.forEach((p,i)=>{let e=$('tile'+i);if(e){e.classList.toggle('active',i===turn);$('done'+i).textContent=finished(p)+'/4 Home'+(p.bot?' · AI':'')}});$('currentTitle').textContent=current().name.toUpperCase()+'\'S TURN';$('currentTitle').style.color=COLORS[current().color].soft;$('turnSub').textContent=current().bot?'Your rival is thinking…':phase==='choose'?'Pick a glowing token.':phase==='rolling'?'Dice rolling…':'Roll the dice to play.';$('rollDice').disabled=phase!=='ready'||paused||current().bot||gameOver;$('rollDice').textContent=phase==='rolling'?'🎲 ROLLING…':phase==='choose'?'♟ PICK TOKEN':'🎲 ROLL DICE';$('chooseArea').classList.toggle('hidden',phase!=='choose'||current().bot);if(phase==='choose'&&!current().bot){$('tokenChoices').innerHTML=legal.map(i=>`<button class="tokenOpt" data-index="${i}">♟ TOKEN ${i+1}${current().pieces[i]<0?' · ENTER':''}</button>`).join('');[...$('tokenChoices').querySelectorAll('button')].forEach(b=>b.onclick=()=>moveToken(Number(b.dataset.index)))}$('hint').textContent=phase==='choose'?'You rolled '+dice+'. Choose a glowing token.':phase==='rolling'?'The royal dice decide your fate…':phase==='ready'?lastRoll===6?'Bonus turn! Roll again.':current().bot?'Watch your rival make a move.':'Tap ROLL DICE to begin your turn.':'Watch the token travel…';$('timerMeter').classList.toggle('hidden',!rules.timer||current().bot||phase==='moving'||phase==='rolling'||paused);$('timerFill').style.width='100%'}
+function scheduleAI(action,delay=750){clearTimeout(aiWait);const ticket=transitionTicket;aiWait=setTimeout(()=>{if(ticket!==transitionTicket||gameOver||paused||!current().bot)return;if(action==='roll'&&phase==='ready')rollDice();else if(action==='choose'&&phase==='choose')moveToken(chooseAiMove(legal,lastRoll))},delay)}
+function rollDice(force){if(phase!=='ready'||gameOver||paused)return;audioReady();phase='rolling';lastRoll=0;drawDie(dice);updateUI();sfx('roll');const result=Number.isInteger(force)&&force>=1&&force<=6?force:randDie();startRoyalThrow(result);let start=performance.now(),old=transitionTicket;
+ function spin(){if(transitionTicket!==old||paused||scene!=='game')return;const elapsed=performance.now()-start;if(elapsed<660){dice=randDie();drawDie(dice);rollWait=setTimeout(spin,65);return}dice=result;settleRoyalThrow(result);lastRoll=result;rollNumber++;if(result===6){streak++;sfx('six');event('six',current().name)}else streak=0;
+ if(result===6&&rules.threeSix&&streak>=3){event('triple',current().name);log(current().name+' rolled three sixes. Turn forfeited!');phase='waiting';updateUI();advanceTurnLater(1350);return}
+ legal=legalMoves(current(),result);if(!legal.length){phase='waiting';updateUI();log(current().name+' rolled '+result+' — no move available.');if(result!==6)event('no',current().name);afterMove({six:result===6,captured:false,finished:false,noMove:true});return}
+ phase='choose';updateUI();if(current().bot)scheduleAI('choose',550);else if(legal.length===1){ // auto advance only on one unambiguous legal token
+  const token=legal[0];const ticket=transitionTicket;aiWait=setTimeout(()=>{if(ticket===transitionTicket&&phase==='choose'&&!paused)moveToken(token)},430);
+ }
+ }
+ rollWait=setTimeout(spin,85);
+}
+$('rollDice').onclick=()=>rollDice();
+function announceMiss(eligible,captured){if(eligible&&!captured){event('miss',current().name);sfx('miss')}}
+function moveToken(i){if(phase!=='choose'||!legal.includes(i)||paused||gameOver)return;clearTimeout(aiWait);const p=current(),old=p.pieces[i],roll=lastRoll,to=old===-1?0:old+roll;const possibleCaptures=legal.some(j=>{const dest=p.pieces[j]===-1?0:p.pieces[j]+roll;return capturesAt(turn,dest).length>0});const stepPositions=old===-1?[0]:Array.from({length:roll},(_,k)=>old+k+1);if(!stepPositions.length)return;
+ phase='moving';updateUI();let x0=old,stepNo=0;let moveStart=performance.now();const own=++moveTicket;const turnOwner=turn;const startPoint=posFor(p,old,i);
+ animation={owner:turnOwner,piece:i,x:startPoint.x,y:startPoint.y,to,from:old};
+ const stepTime=115;animation.resume=()=>{moveStart+=performance.now()-pauseStartedAt;requestAnimationFrame(step)};function step(t){if(moveTicket!==own||paused||gameOver||scene!=='game')return;let dt=t-moveStart;while(dt>=stepTime&&stepNo<stepPositions.length){p.pieces[i]=stepPositions[stepNo];stepNo++;sfx('step');moveStart+=stepTime;dt=t-moveStart}
+ const dst=stepNo<stepPositions.length?posFor(p,stepPositions[stepNo],i):posFor(p,to,i);const src=stepNo===0?startPoint:posFor(p,stepPositions[stepNo-1],i);const ratio=clamp(dt/stepTime,0,1);const ease=ratio<.5?2*ratio*ratio:1-Math.pow(-2*ratio+2,2)/2;animation.x=src.x+(dst.x-src.x)*ease;animation.y=src.y+(dst.y-src.y)*ease-.18*Math.sin(Math.PI*ease);
+ if(stepNo>=stepPositions.length){p.pieces[i]=to;animation=null;onMoveDone(turnOwner,i,to,possibleCaptures);return}requestAnimationFrame(step)}requestAnimationFrame(step)}
+function onMoveDone(owner,i,to,hadCaptureOption){const p=players[owner];const captured=capturesAt(owner,to);for(const x of captured){players[x.enemy].pieces[x.piece]=-1}const fin=to===56;const safe=isSafe(p,to);if(captured.length){sfx('capture');event('kill',p.name);log(p.name+' sent '+captured.length+' rival token'+(captured.length>1?'s':'')+' back to base!')}else if(fin){sfx('finish');event('finish',p.name);log(p.name+' brought token '+(i+1)+' home!')}else if(hadCaptureOption){announceMiss(true,false);log(p.name+' skipped a possible capture!')}else if(safe){event('safe',p.name);log(p.name+' found a safe square.')}else log(p.name+' moved token '+(i+1)+' by '+lastRoll+' squares.');
+ if(finished(p)===4){gameOver=true;phase='won';transitionTicket++;sfx('win');event('win',p.name);setTimeout(()=>{if(gameOver&&scene==='game'){ $('winnerTitle').textContent=p.name+' WINS!';$('winnerDesc').textContent='Four tokens home. The '+COLORS[p.color].name+' crown belongs to '+p.name+'.';$('winOverlay').classList.remove('hidden');burst(COLORS[p.color].soft,60)}},850);return}
+ afterMove({six:lastRoll===6,captured:captured.length>0,finished:fin,noMove:false})}
+function afterMove({six,captured,finished,noMove}){phase='waiting';updateUI();const extra=!!((six&&rules.sixBonus)||(captured&&rules.captureBonus)||finished);if(extra){if(!six)streak=0;pendingWait='bonus';grantBonusAfter(noMove?650:760)}else advanceTurnLater(noMove?640:850)}
+function grantBonusAfter(delay){pendingWait='bonus';let t=transitionTicket;aiWait=setTimeout(()=>{if(t!==transitionTicket||paused||gameOver)return;pendingWait=null;phase='ready';lastRoll=0;turnDeadline=rules.timer&&!current().bot?performance.now()+15000:0;updateUI();if(current().bot)scheduleAI('roll',600)},delay)}
+function advanceTurnLater(delay){pendingWait='advance';let t=transitionTicket;aiWait=setTimeout(()=>{if(t!==transitionTicket||paused||gameOver)return;pendingWait=null;turn=(turn+1)%players.length;startTurn()},delay)}
+// Drawing engine, all logical positions 750x750 for responsive mobile canvas.
+function rr(x,y,w,h,r=10){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
+function fillRR(x,y,w,h,r,color){ctx.fillStyle=color;rr(x,y,w,h,r);ctx.fill()}
+function text(str,x,y,size=12,col='#253244',weight='700',align='center'){ctx.save();ctx.fillStyle=col;ctx.textAlign=align;ctx.textBaseline='middle';ctx.font=`${weight} ${size}px system-ui`;ctx.fillText(str,x,y);ctx.restore()}
+function cellCenter(r,c){return{x:(c+.5)*C,y:(r+.5)*C}}
+// High-quality board is painted once to an offscreen surface; moving tokens are rendered separately.
+const boardArt=document.createElement('canvas');boardArt.width=boardArt.height=W;
+const boardArtCtx=boardArt.getContext('2d');let royalBoardCached=false;
+function facePanel(x,y,w,h,r,top,edge,shadow=5){
+ ctx.save();ctx.shadowColor='#0004';ctx.shadowBlur=shadow+4;ctx.shadowOffsetY=4;
+ fillRR(x,y+4,w,h,r,edge);ctx.shadowColor='transparent';ctx.shadowBlur=0;ctx.shadowOffsetY=0;
+ const g=ctx.createLinearGradient(x,y,x,y+h);g.addColorStop(0,'#ffffff55');g.addColorStop(.16,top);g.addColorStop(.83,top);g.addColorStop(1,edge);
+ fillRR(x,y,w,h-2,r,g);ctx.strokeStyle='#fffbe480';ctx.lineWidth=2;rr(x+2,y+2,w-4,h-6,Math.max(3,r-2));ctx.stroke();ctx.restore();
+}
+function drawBase(color,x,y){
+ const k=COLORS[color],g=ctx.createLinearGradient(x,y,x+300,y+300);
+ g.addColorStop(0,k.soft);g.addColorStop(.22,k.hex);g.addColorStop(.8,k.hex);g.addColorStop(1,k.dark);
+ ctx.fillStyle=g;ctx.fillRect(x,y,300,300);
+ // quilted enamel texture with diagonal highlights
+ ctx.save();ctx.beginPath();ctx.rect(x,y,300,300);ctx.clip();
+ for(let i=-260;i<=380;i+=33){ctx.strokeStyle='#ffffff13';ctx.lineWidth=1.7;ctx.beginPath();ctx.moveTo(x+i,y);ctx.lineTo(x+i+300,y+300);ctx.stroke()}
+ const gloss=ctx.createLinearGradient(x,y,x+280,y+290);gloss.addColorStop(0,'#ffffff43');gloss.addColorStop(.4,'#ffffff05');gloss.addColorStop(1,'#0000002e');ctx.fillStyle=gloss;ctx.fillRect(x,y,300,300);
+ // raised porcelain cradle inside each base, leaving substantial colorful bezel
+ facePanel(x+15,y+15,270,266,25,'#fff4da','#c9a975',8);
+ const inner=ctx.createLinearGradient(x+30,y+30,x+260,y+275);inner.addColorStop(0,'#fffef4');inner.addColorStop(.6,'#faf2db');inner.addColorStop(1,'#e9d5b3');
+ fillRR(x+30,y+30,240,238,20,inner);ctx.strokeStyle='#dac496';ctx.lineWidth=2;rr(x+30,y+30,240,238,20);ctx.stroke();
+ // engraved corner filigree, subtle and symmetrical
+ ctx.strokeStyle=k.hex+'6a';ctx.lineWidth=3;
+ for(const [dx,dy,sx,sy] of [[52,52,1,1],[248,52,-1,1],[52,242,1,-1],[248,242,-1,-1]]){
+ ctx.beginPath();ctx.arc(x+dx,y+dy,13,Math.PI*.25*sx,Math.PI*.75*sx);ctx.stroke();
+ }
+ for(const [row,col] of DOCK[color]){
+  const cx=(col+.5)*C,cy=(row+.5)*C;
+  ctx.save();ctx.shadowColor='#150d0e66';ctx.shadowBlur=9;ctx.shadowOffsetY=4;
+  ctx.beginPath();ctx.arc(cx,cy,34,0,Math.PI*2);ctx.fillStyle=k.dark;ctx.fill();ctx.restore();
+  let rim=ctx.createLinearGradient(cx-24,cy-27,cx+26,cy+32);rim.addColorStop(0,'#fff5d4');rim.addColorStop(.5,'#ceae6c');rim.addColorStop(1,'#885726');ctx.fillStyle=rim;
+  ctx.beginPath();ctx.arc(cx,cy-2,33,0,Math.PI*2);ctx.fill();
+  const inset=ctx.createRadialGradient(cx-5,cy-12,1,cx,cy,28);inset.addColorStop(0,'#fffdef');inset.addColorStop(1,k.soft);
+  ctx.fillStyle=inset;ctx.beginPath();ctx.arc(cx,cy-3,25,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#ffffffc9';ctx.lineWidth=2;ctx.beginPath();ctx.arc(cx,cy-4,22,Math.PI*1.08,Math.PI*1.85);ctx.stroke();
+ }
+ ctx.restore();
+}
+function raisedCell(x,y,color,isSafe=false){
+ ctx.fillStyle='#66482c';ctx.fillRect(x,y+1,C,C-1);
+ const g=ctx.createLinearGradient(x,y,x+C,y+C);g.addColorStop(0,'#ffffff');g.addColorStop(.18,color);g.addColorStop(.76,color);g.addColorStop(1,'#b1a698');
+ ctx.fillStyle=g;ctx.fillRect(x+1.2,y+1.2,C-2.4,C-4);
+ ctx.strokeStyle='#fffdf0bd';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+2.5,y+C-3);ctx.lineTo(x+2.5,y+3);ctx.lineTo(x+C-3,y+3);ctx.stroke();
+ ctx.strokeStyle='#67543d7c';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+2,y+C-3);ctx.lineTo(x+C-3,y+C-3);ctx.lineTo(x+C-3,y+2);ctx.stroke();
+ if(isSafe){ctx.save();ctx.translate(x+C/2,y+C/2-1);
+  ctx.shadowColor='#0005';ctx.shadowBlur=4;ctx.shadowOffsetY=3;
+  const sg=ctx.createLinearGradient(-18,-17,19,20);sg.addColorStop(0,'#fff2ac');sg.addColorStop(.45,'#ba843f');sg.addColorStop(1,'#60401c');ctx.fillStyle=sg;
+  ctx.beginPath();for(let q=0;q<10;q++){const a=-Math.PI/2+q*Math.PI/5,rad=q%2?8.5:19;ctx.lineTo(Math.cos(a)*rad,Math.sin(a)*rad)}ctx.closePath();ctx.fill();ctx.shadowColor='transparent';ctx.strokeStyle='#fff2cb';ctx.lineWidth=1.3;ctx.stroke();ctx.restore()}
+}
+function paintRoyalBoard(){
+ ctx.clearRect(0,0,W,W);
+ const bg=ctx.createLinearGradient(0,0,W,W);bg.addColorStop(0,'#fff1d1');bg.addColorStop(.53,'#e2ceae');bg.addColorStop(1,'#cfac7c');ctx.fillStyle=bg;ctx.fillRect(0,0,W,W);
+ // inner reflective border lines
+ drawBase('red',0,0);drawBase('green',450,0);drawBase('yellow',450,450);drawBase('blue',0,450);
+ for(let row=0;row<15;row++)for(let col=0;col<15;col++)if((row>=6&&row<=8)||(col>=6&&col<=8)){
+  const x=col*C,y=row*C;let color='#f5f1e7';
+  if(row===7&&col>=1&&col<=5)color='#f0a1a0';
+  if(col===7&&row>=1&&row<=5)color='#85d9bc';
+  if(row===7&&col>=9&&col<=13)color='#f4d37c';
+  if(col===7&&row>=9&&row<=13)color='#8cbbeb';
+  const sc=TRACK.findIndex(q=>q[0]===row&&q[1]===col);
+  const home=COLOR_ORDER.find(c=>COLORS[c].offset===sc);
+  if(home)color=COLORS[home].soft;
+  raisedCell(x,y,color,sc>=0&&SAFE.has(sc));
+ }
+ const triangle=(pts,base)=>{ctx.save();ctx.beginPath();ctx.moveTo(...pts[0]);pts.slice(1).forEach(pt=>ctx.lineTo(...pt));ctx.closePath();
+  const g=ctx.createLinearGradient(330,310,420,445);g.addColorStop(0,'#ffffff44');g.addColorStop(.5,base);g.addColorStop(1,'#00000030');ctx.fillStyle=g;ctx.shadowBlur=5;ctx.shadowColor='#0004';ctx.fill();ctx.shadowBlur=0;ctx.lineWidth=2;ctx.strokeStyle='#fff7d3d7';ctx.stroke();ctx.restore()};
+ triangle([[300,300],[450,300],[375,375]],'#1fa37f');triangle([[450,300],[450,450],[375,375]],'#d8a73d');triangle([[450,450],[300,450],[375,375]],'#327ac9');triangle([[300,450],[300,300],[375,375]],'#d65152');
+ // engraved royal crown medallion at center
+ ctx.save();ctx.shadowBlur=10;ctx.shadowColor='#0008';ctx.beginPath();ctx.arc(375,375,26,0,Math.PI*2);ctx.fillStyle='#634525';ctx.fill();ctx.restore();
+ const med=ctx.createRadialGradient(369,363,2,375,375,24);med.addColorStop(0,'#fff8d6');med.addColorStop(.55,'#e5bd72');med.addColorStop(1,'#97703e');ctx.fillStyle=med;ctx.beginPath();ctx.arc(375,373,23,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#fff7cf';ctx.lineWidth=2;ctx.stroke();text('♛',375,372,25,'#81552c');
+ // perimeter shadow/reflection
+ ctx.strokeStyle='#3d2815aa';ctx.lineWidth=8;ctx.strokeRect(4,4,W-8,W-8);
+ ctx.strokeStyle='#fff2c2be';ctx.lineWidth=3;ctx.strokeRect(10,10,W-20,W-20);
+ const glow=ctx.createLinearGradient(0,0,0,175);glow.addColorStop(0,'#fff9dc32');glow.addColorStop(1,'#fff9dc00');ctx.fillStyle=glow;ctx.fillRect(12,12,W-24,167);
+}
+function drawBoard(){
+ if(!royalBoardCached){paintRoyalBoard();boardArtCtx.clearRect(0,0,W,W);boardArtCtx.drawImage(canvas,0,0);royalBoardCached=true}
+ else{ctx.clearRect(0,0,W,W);ctx.drawImage(boardArt,0,0)}
+}
+function tokenAt(x,y,k,scale=1,highlight=false,ghost=false){
+ ctx.save();ctx.translate(x*C,y*C);ctx.scale(scale,scale);if(ghost)ctx.globalAlpha=.6;
+ const t=performance.now();if(highlight){const pulse=(1+Math.sin(t/210))/2;ctx.save();ctx.shadowColor=k.hex;ctx.shadowBlur=12+pulse*13;ctx.strokeStyle=`rgba(255,240,167,${.6+.3*pulse})`;ctx.lineWidth=4;ctx.beginPath();ctx.arc(0,-5,23+pulse*4,0,Math.PI*2);ctx.stroke();ctx.restore()}
+ // floating translucent shadow
+ ctx.fillStyle='#160d1366';ctx.filter='blur(3px)';ctx.beginPath();ctx.ellipse(3,17,20,6,0,0,Math.PI*2);ctx.fill();ctx.filter='none';
+ // foot ring: extruded metal with enamel
+ const baseG=ctx.createLinearGradient(-20,-7,18,22);baseG.addColorStop(0,'#fff8d9');baseG.addColorStop(.32,'#c8a069');baseG.addColorStop(.77,'#94703c');baseG.addColorStop(1,'#3f271e');
+ ctx.beginPath();ctx.ellipse(0,9,20,11,0,0,Math.PI*2);ctx.fillStyle=baseG;ctx.fill();ctx.strokeStyle='#452e1c';ctx.lineWidth=1.5;ctx.stroke();
+ ctx.beginPath();ctx.ellipse(0,6,18.4,9,0,0,Math.PI*2);ctx.fillStyle=k.dark;ctx.fill();
+ ctx.beginPath();ctx.ellipse(0,4,15.4,7.9,0,0,Math.PI*2);ctx.fillStyle=k.hex;ctx.fill();
+ // beautiful 3d pawns: wide shoulder, narrow collar and glossy globe
+ const body=ctx.createLinearGradient(-14,-23,15,9);body.addColorStop(0,k.soft);body.addColorStop(.22,k.hex);body.addColorStop(.65,k.hex);body.addColorStop(1,k.dark);
+ ctx.beginPath();ctx.moveTo(-12,5);ctx.bezierCurveTo(-14,-2,-8,-11,-7,-13);ctx.lineTo(-7,-17);ctx.bezierCurveTo(-13,-24,-7,-29,0,-29);ctx.bezierCurveTo(7,-29,13,-24,7,-17);ctx.lineTo(7,-13);ctx.bezierCurveTo(8,-11,14,-2,12,5);ctx.closePath();ctx.fillStyle=body;ctx.fill();ctx.strokeStyle='#fff6dcbd';ctx.lineWidth=2;ctx.stroke();
+ const orb=ctx.createRadialGradient(-5,-25,1,0,-20,13);orb.addColorStop(0,'#fffef4');orb.addColorStop(.17,k.soft);orb.addColorStop(.48,k.hex);orb.addColorStop(1,k.dark);
+ ctx.fillStyle=orb;ctx.beginPath();ctx.arc(0,-20,11.2,0,Math.PI*2);ctx.fill();ctx.lineWidth=1.5;ctx.strokeStyle='#fffad5ab';ctx.stroke();
+ // specular highlights and golden collar
+ ctx.strokeStyle='#ffeadb96';ctx.lineWidth=2;ctx.beginPath();ctx.arc(-2.5,-21,5,2.5,4.5);ctx.stroke();
+ ctx.fillStyle='#ffffffa6';ctx.beginPath();ctx.ellipse(-5,-23,2.2,3.4,.34,0,Math.PI*2);ctx.fill();
+ ctx.beginPath();ctx.ellipse(0,-10,9,2.1,0,0,Math.PI*2);ctx.fillStyle='#fff4d5a8';ctx.fill();
+ ctx.restore();
+}
+function currentTokenPositions(){const grouped=new Map();players.forEach((p,pi)=>p.pieces.forEach((pos,i)=>{if(pos===56)return;const point=posFor(p,pos,i),key=pos>=0&&pos<=50?'track'+absoluteIndex(p,pos):pos===-1?'dock'+pi+'-'+i:'lane'+pi+'-'+pos;let arr=grouped.get(key)||[];arr.push({pi,i,point});grouped.set(key,arr)}));let out=[];for(const arr of grouped.values()){let n=arr.length;arr.forEach((v,i)=>{if(n>1){const a=2*Math.PI*i/n,vv=Math.min(.19,.09+.028*n);v.point={x:v.point.x+Math.cos(a)*vv,y:v.point.y+Math.sin(a)*vv}}out.push(v)})}return out}
+function drawTokens(){renderTokens=[];for(const v of currentTokenPositions()){const p=players[v.pi];if(animation&&animation.owner===v.pi&&animation.piece===v.i)continue;const isLegal=turn===v.pi&&phase==='choose'&&!p.bot&&legal.includes(v.i);tokenAt(v.point.x,v.point.y,COLORS[p.color],1,isLegal);renderTokens.push({...v,highlight:isLegal})}if(animation){tokenAt(animation.x,animation.y,COLORS[players[animation.owner].color],1.09,true)}}
+function render(){if(scene==='game'){drawBoard();drawTokens()}requestAnimationFrame(render)}requestAnimationFrame(render);
+canvas.addEventListener('pointerdown',e=>{if(phase!=='choose'||current().bot||paused)return;const rect=canvas.getBoundingClientRect();const x=(e.clientX-rect.left)/rect.width*15,y=(e.clientY-rect.top)/rect.height*15;let chosen=renderTokens.filter(t=>t.highlight).map(t=>({...t,dist:Math.hypot(t.point.x-x,t.point.y-y)})).sort((a,b)=>a.dist-b.dist)[0];if(chosen&&chosen.dist<=.62)moveToken(chosen.i)});
+// Pause freezes AI decision, dice animation, token travel and optional human timer without forcing a move.
+let pauseStartedAt=0;function pauseGame(){if(scene!=='game'||gameOver||paused)return;pauseStartedAt=performance.now();paused=true;clearTimers();if(rules.timer&&turnDeadline){timerRemaining=Math.max(0,turnDeadline-performance.now())}transitionTicket++;if(phase==='rolling'){phase='ready';drawDie(dice)}$('pauseOverlay').classList.remove('hidden');updateUI()}
+let timerRemaining=0;
+function resumeGame(){if(!paused)return;paused=false;$('pauseOverlay').classList.add('hidden');transitionTicket++;if(rules.timer&&!current().bot)turnDeadline=performance.now()+(timerRemaining||15000);updateUI();if(phase==='moving'&&animation&&animation.resume){animation.resume()}else if(phase==='waiting'){if(pendingWait==='bonus')grantBonusAfter(450);else advanceTurnLater(450)}else if(current().bot){if(phase==='choose')scheduleAI('choose');else if(phase==='ready')scheduleAI('roll')}}
+$('pauseGame').onclick=pauseGame;$('resumeGame').onclick=resumeGame;
+function lobby(){clearTimers();transitionTicket++;moveTicket++;scene='lobby';gameOver=false;paused=false;phase='idle';animation=null;$('lobby').classList.remove('hidden');$('gameScene').classList.add('hidden');$('pauseOverlay').classList.add('hidden');$('winOverlay').classList.add('hidden');$('eventWrap').replaceChildren();refreshLobby()}
+$('exitGame').onclick=lobby;$('winnerLobby').onclick=lobby;
+$('restartGame').onclick=()=>{audioReady();beginGame()};$('playAgain').onclick=()=>{audioReady();beginGame()};$('menuBtn').onclick=()=>{if(scene==='game'){if(!paused)pauseGame();else resumeGame()}else{window.scrollTo({top:document.querySelector('.card')?.offsetTop||0,behavior:'smooth'})}};
+window.addEventListener('keydown',e=>{if(e.key==='Escape'&&scene==='game'){e.preventDefault();paused?resumeGame():pauseGame()}if(e.key===' '&&scene==='game'&&phase==='ready'&&!current().bot){e.preventDefault();rollDice()}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&scene==='game'&&!paused&&!gameOver)pauseGame()});
+setInterval(()=>{if(scene!=='game'||!rules.timer||current().bot||paused||gameOver||!['ready','choose'].includes(phase))return;const rem=turnDeadline-performance.now();$('timerFill').style.width=clamp(rem/15000*100,0,100)+'%';if(rem<=0){turnDeadline=0;if(phase==='ready')rollDice();else if(phase==='choose')moveToken(legal[0])}},130);
+refreshLobby();drawDie(1);
+// Lobby mini-board uses actual playable table artwork; no unlicensed imagery.
+(function initLobbyPreview(){try{drawBoard();const preview=document.getElementById('lobbyBoard');if(preview)preview.getContext('2d').drawImage(boardArt,0,0)}catch(e){console.warn('Ludo preview fallback',e)}})();
+// Diagnostics are exposed only with ?debug=1 and never determine production dice results.
+if(DEBUG)window.__ludoTest={get:()=>({players:structuredClone(players),turn,phase,dice,legal:legal.slice(),streak,pendingWait,rollNumber,gameOver,scene,rules:{...rules}}),set:(f)=>{f({players,turn,phase,dice,legal,streak});updateUI()},roll:rollDice,move:moveToken,board:TRACK.map(a=>a.slice()),legalMoves,capturesAt,threatened,advance:()=>{turn=(turn+1)%players.length;startTurn()},setPiece:(pi,i,pos)=>{players[pi].pieces[i]=pos;updateUI()},currentRules:()=>({...rules})};
+})();
+</script></body></html>
