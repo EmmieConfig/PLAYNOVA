@@ -23,10 +23,14 @@ The debug APK is for testing, **not** a Play Store production release. The APK i
 
 ## Current game availability
 
-- **TRAP IQ**: 10 playable platform/trap levels, pause/resume, sound toggle, and Relaxed/Normal/Fast movement settings.
+- **TRAP IQ**: 10 playable platform/trap levels, pause/resume, louder sound effects, and Relaxed/Normal/Fast movement settings controlled centrally from PLAYNOVA Home → Settings.
 - Other categories/games shown in the hub are planned/previews and are not yet playable.
 - Favorites and basic profile/progress are stored on the device using WebView local storage.
 
 ## No local developer software required
 
 The user does not need to install Android Studio or run build commands. GitHub Actions builds the APK in the cloud. Physical Android device testing is still required before calling the app production-ready.
+
+## PLAYNOVA Settings (v1.1.1)
+
+Open the gear on the Home screen or use the bottom Settings tab. Sound effects can be toggled, effects volume adjusted from 0–100% (90% default), a sound preview played, and gameplay movement speed set to Relaxed, Normal or Fast. Preferences save locally and apply when launching TRAP IQ. The in-game Pause menu no longer contains settings. Device media-volume also affects audible loudness.
