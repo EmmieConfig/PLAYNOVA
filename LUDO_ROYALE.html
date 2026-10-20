@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0d1822"><title>LUDO ROYALE • PLAYNOVA Preview</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0d1822"><title>LUDO ROYALE • Premium 3D Edition</title>
 <style>
 :root{--ink:#eaf4f2;--muted:#a5b6c4;--gold:#f4cf83;--panel:#152536;--deep:#0b1622;--border:#43566b;--red:#df554e;--green:#32aa84;--yellow:#e9b64a;--blue:#468edc}
 *{box-sizing:border-box}html{height:100%;-webkit-tap-highlight-color:transparent}body{margin:0;min-height:100%;background:radial-gradient(ellipse at 50% 3%,#334952 0,#172938 38%,#0b1622 86%);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,sans-serif;overscroll-behavior:none}button,input,select{font:inherit}button{cursor:pointer;color:inherit}button:disabled{opacity:.4;cursor:default}.hidden{display:none!important}
@@ -16,11 +16,112 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 @media(max-width:769px){.head{height:66px}.hero{gap:6px;grid-template-columns:1fr 175px;padding:16px 0 22px}.heroArt{height:169px}.artBoard{width:145px;height:145px;border-width:7px;border-radius:13px}.artPiece{width:28px;height:28px}.artGlow{width:170px;height:170px}.floatingDie{font-size:23px;padding:9px;right:-3px;bottom:0}.lobbyGrid{grid-template-columns:1fr}.gameStage{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr;align-items:start}.scoreCard{grid-template-columns:1fr}.diceCard{grid-row:span 2}.activity{min-height:auto}.legend{display:none}.boardFrame{max-width:630px;margin:0 auto}.gameTop{margin-top:0}.gameBoardCol{width:100%}}
 @media(max-width:510px){.shell{padding:0 9px 18px}.head{height:61px}.brandText{font-size:19px}.brandText small{font-size:8px}.crest{width:36px;height:41px;font-size:20px}.hero{grid-template-columns:1fr 125px;padding-top:8px}.hero h1{font-size:33px;margin:9px 0}.hero p{font-size:11px}.heroArt{height:135px}.artBoard{height:107px;width:107px;border-width:5px}.artGlow{height:130px;width:130px}.artPiece{height:19px;width:19px;border-width:3px}.floatingDie{font-size:21px}.kicker{font-size:9px}.card{padding:15px}.boardFrame{padding:5px;border-radius:12px;border-width:1px}.boardInner{border:2px solid #755d3c;border-radius:6px}.gameStage{gap:9px}.side{display:flex;flex-direction:column;gap:8px}.scoreCard{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.playerTile{display:flex;flex-direction:column;gap:5px;padding:7px 4px;text-align:center;border-radius:9px}.playerChip{height:20px;width:20px;font-size:10px}.playerTxt b{font-size:9px}.playerTxt small{font-size:8px}.diceCard{display:grid;grid-template-columns:1fr 77px 1.2fr;align-items:center;column-gap:8px;padding:10px;border-radius:14px;text-align:left}.turnTitle{font-size:15px}.turnSub{font-size:10px;min-height:auto}.diceRow{margin:0;gap:0}.dieShell{height:66px;width:69px}.die{width:55px;height:55px;padding:6px;gap:2px;border-radius:12px}.pip{width:9px;height:9px}.rollBtn{font-size:11px;padding:13px 6px}.hint{grid-column:1/-1;font-size:10px;min-height:auto;margin-top:2px}.chooseArea{grid-column:1/-1;margin-top:4px}.timerMeter{grid-column:1/-1;margin-top:2px}.activity{padding:9px}.activity h3{margin-bottom:5px}.gameTop .roundTag{font-size:10px}.boardFoot{margin:5px 0;font-size:9px}.eventWrap{top:70px}.eventTitle{font-size:16px}}
 @media(max-height:670px) and (max-width:510px){.head{height:49px}.boardFoot{display:none}.gameTop{margin:0 0 5px}.scoreCard{gap:3px}.playerTile{padding:4px 3px}.diceCard{padding:6px 9px}.diceCard .hint{margin-top:1px}}
+
+
+/* ===== LUDO ROYALE 0.2: premium tabletop edition ===== */
+:root{--gold-light:#fff2c0;--gold-edge:#b98339;--velvet:#0e2028}
+body{background:radial-gradient(ellipse at 50% -22%,#526475 0,#203746 29%,#0c1d2d 65%,#08121f 100%)}
+body:before{background-image:repeating-linear-gradient(96deg,#ffffff05 0px,transparent 2px,transparent 71px),radial-gradient(#fbcc6138 1px,transparent 1px);background-size:auto,45px 45px;opacity:.25}
+#gameScene{position:relative}
+#gameScene:before{content:"";z-index:-1;position:absolute;inset:42px -10px auto;height:min(69vw,730px);background:radial-gradient(ellipse at center,#bd87412e,transparent 70%);filter:blur(20px);pointer-events:none}
+.gameTop .roundTag{color:#ffde9a;text-shadow:0 0 22px #f7b1514f}
+.gameStage{gap:22px}
+.boardPresentation{position:relative;padding:13px;background:linear-gradient(146deg,#53646c 0%,#172b35 32%,#1b2b36 75%,#56606a 100%);border-radius:33px;box-shadow:0 24px 42px #000b,0 4px 0 #09151b,inset 0 2px #d9e7e338,inset 0 -4px #0008;isolation:isolate}
+.boardPresentation:before{content:"";pointer-events:none;position:absolute;inset:4px;border-radius:30px;border:1px solid #ddc18355;box-shadow:inset 0 0 0 1px #14191c,0 0 0 1px #0007}
+.boardPresentation:after{content:"";pointer-events:none;position:absolute;inset:16px;border-radius:18px;border:2px solid #fff8d520;box-shadow:0 0 13px #0005}
+.boardPresentation .royalCorner{position:absolute;z-index:3;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 28%,#fff2bd,#c99342 55%,#805526 100%);border:2px solid #f0dbaa;box-shadow:0 4px 8px #000a,inset 0 -2px #6e451f;color:#684519;font-size:13px;pointer-events:none}
+.boardPresentation .rc1{top:2px;left:2px}.boardPresentation .rc2{top:2px;right:2px}.boardPresentation .rc3{bottom:2px;left:2px}.boardPresentation .rc4{bottom:2px;right:2px}
+.boardFrame{margin:0;max-width:none;position:relative;overflow:hidden;padding:11px;border:1px solid #fedb93;border-radius:19px;background:linear-gradient(146deg,#fff0bb 0,#af7734 8%,#dba861 18%,#84572c 50%,#f7dfab 81%,#9c692e 100%);box-shadow:0 3px 0 #684322,0 15px 24px #0009,inset 0 4px 3px #fff8,inset 0 -4px 4px #593713}
+.boardFrame:before{content:"";pointer-events:none;position:absolute;inset:4px;border-radius:16px;border:2px solid #fff8cb70;box-shadow:inset 0 0 9px #3c2210}
+.boardInner{border:3px solid #4b3124;border-radius:10px;box-shadow:0 0 0 2px #f8d790,0 2px 10px #2812059c,inset 0 2px 4px #fff8;overflow:hidden}
+.boardInner canvas{border-radius:5px;background:#ead7b3;image-rendering:auto;filter:saturate(1.06) contrast(1.04)}
+.boardFoot{font-weight:680;color:#dfca9c;letter-spacing:.14px;margin:13px 0 4px}
+.side .diceCard{position:relative;overflow:hidden;background:linear-gradient(145deg,#2a3946 0%,#0f2534 50%,#112532 100%);border:1px solid #a48b61;border-radius:24px;box-shadow:0 16px 31px #0008,inset 0 2px #ffffff23,inset 0 0 0 3px #ffffff05;padding:18px 14px}
+.side .diceCard:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 50%,#bca4741a,transparent 67%)}
+.side .turnTitle{color:#ffe1a4;letter-spacing:.6px;font-size:21px;text-shadow:0 2px 10px #0006}
+.side .turnSub{color:#c4d0d2;margin-top:4px}
+.diceRow{margin:13px 0 12px;perspective:760px}
+.diceArena{height:157px;width:100%;position:relative;isolation:isolate;overflow:hidden;display:grid;place-items:center;border-radius:20px;border:2px solid #be9860;background:radial-gradient(ellipse at 50% 43%,#476065 0%,#1d3139 45%,#0b1b26 97%);box-shadow:inset 0 6px 16px #0009,inset 0 -2px 2px #f4d6a644,0 3px 0 #081521,0 9px 15px #0006}
+.diceArena:before{content:"";inset:9px;position:absolute;border-radius:14px;border:1px solid #dbbe8650;box-shadow:inset 0 0 0 3px #ffffff05;pointer-events:none}
+.diceArena .trayTitle{position:absolute;top:11px;text-align:center;width:100%;font-size:9px;letter-spacing:2.4px;color:#f0d7a6a0;font-weight:900}
+.diceArena .trayLine{position:absolute;bottom:12px;width:44%;height:2px;background:linear-gradient(90deg,transparent,#e8b9737c,transparent)}
+.trayHalo{position:absolute;top:42px;width:125px;height:95px;border-radius:50%;background:radial-gradient(ellipse,#fbf0bb20,transparent 73%);filter:blur(4px)}
+.diceArena .dieShell{perspective:420px;position:absolute;z-index:2;top:65px;left:50%;width:66px;height:66px;transform:translateX(-50%);overflow:visible}
+.diceArena .dieShadow{position:absolute;z-index:1;left:50%;top:112px;height:18px;width:75px;border-radius:50%;background:#000b;transform:translateX(-50%);filter:blur(7px);opacity:.78;transition:filter .15s,opacity .15s}
+.diceArena .die{display:block;position:relative;height:58px;width:58px;margin:3px auto;transform-style:preserve-3d;transition:none!important;border:0;background:none;box-shadow:none;border-radius:0;padding:0;gap:0;will-change:transform;--endX:-14deg;--endY:19deg}
+.diceArena .die .cubeFace{position:absolute;inset:0;background:linear-gradient(145deg,#ffffff 4%,#fffcf0 45%,#d7dad8 100%);border:2px solid #fdf0d0;border-radius:11px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:9px;gap:2px;backface-visibility:hidden;box-shadow:inset -4px -4px 7px #8592a77a,inset 2px 2px 4px #fff,0 0 2px #0009}
+.diceArena .die .cubeFace:nth-child(1){transform:translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(2){transform:rotateX(-90deg) translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(3){transform:rotateY(90deg) translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(4){transform:rotateY(-90deg) translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(5){transform:rotateX(90deg) translateZ(29px)}
+.diceArena .die .cubeFace:nth-child(6){transform:rotateY(180deg) translateZ(29px)}
+.diceArena .die .cubeFace .pip{display:block;background:radial-gradient(circle at 40% 29%,#536877,#253947 78%,#142430 100%);width:9px;height:9px;box-shadow:inset 0 2px 3px #0007,0 1px #fff8;justify-self:center;align-self:center}
+.diceArena .die .cubeFace:nth-child(6) .pip{background:radial-gradient(circle at 40% 29%,#cb9040,#76461d)}
+.diceArena .die.rolling{animation:royalPhysicalThrow .67s linear both!important}
+.diceArena .die.rolling .cubeFace{box-shadow:inset -4px -4px 8px #526171b8,inset 2px 2px 4px #fff}
+.diceArena .dieShadow.rolling{animation:royalShadow .67s linear both}
+@keyframes royalPhysicalThrow{
+ 0%{transform:translate3d(-45px,1px,0) rotateX(-45deg) rotateY(20deg) rotateZ(-29deg) scale(.92)}
+ 16%{transform:translate3d(-22px,-39px,9px) rotateX(160deg) rotateY(225deg) rotateZ(64deg) scale(1.1)}
+ 34%{transform:translate3d(29px,-20px,2px) rotateX(310deg) rotateY(436deg) rotateZ(-28deg) scale(1.01)}
+ 48%{transform:translate3d(43px,-3px,0) rotateX(450deg) rotateY(582deg) rotateZ(28deg) scale(.9)}
+ 65%{transform:translate3d(5px,-19px,2px) rotateX(586deg) rotateY(718deg) rotateZ(-14deg) scale(1.04)}
+ 82%{transform:translate3d(-8px,-4px,0) rotateX(687deg) rotateY(830deg) rotateZ(5deg) scale(.97)}
+ 92%{transform:translate3d(3px,-10px,0) rotateX(720deg) rotateY(899deg) rotateZ(0) scale(1.02)}
+ 100%{transform:translate3d(0,0,0) rotateX(var(--endX)) rotateY(var(--endY)) rotateZ(0) scale(1)}
+}
+@keyframes royalShadow{0%{transform:translateX(calc(-50% - 45px)) scale(.78);filter:blur(5px);opacity:.85}18%{transform:translateX(calc(-50% - 22px)) scale(.5);filter:blur(14px);opacity:.45}48%{transform:translateX(calc(-50% + 43px)) scale(.9);filter:blur(5px);opacity:.83}66%{transform:translateX(calc(-50% + 5px)) scale(.6);filter:blur(12px);opacity:.5}100%{transform:translateX(-50%) scale(1);filter:blur(7px);opacity:.78}}
+.rollBtn{position:relative;background:linear-gradient(145deg,#fff0bd,#e1b965 49%,#b98438);border:1px solid #f5deac;box-shadow:0 5px 0 #8f5f2a,0 9px 20px #0007,inset 0 2px #fff8;font-size:14px;letter-spacing:1.1px;text-shadow:0 1px #fff5}
+.rollBtn:active:not(:disabled){transform:translateY(4px);box-shadow:0 1px 0 #8f5f2a,0 4px 11px #0007}
+.playerTile{background:linear-gradient(125deg,#28394a,#112536);border-color:#647080;box-shadow:inset 0 1px #fff2,0 4px 13px #0003}
+.playerChip{background-blend-mode:screen;box-shadow:inset 0 3px 3px #fff9,inset 0 -5px 4px #0005,0 4px 9px #0006}
+.tokenOpt{background:linear-gradient(135deg,#324d60,#142937);border:1px solid #d0b37f78;box-shadow:inset 0 1px #ffffff26}
+@media(max-width:769px){.boardPresentation{max-width:650px;margin:0 auto}.diceArena{height:127px}.diceArena .dieShell{top:47px}.diceArena .dieShadow{top:94px}.side .diceCard{padding:12px 11px}.diceRow{margin:8px 0 10px}}
+@media(max-width:510px){.boardPresentation{padding:8px;border-radius:19px}.boardFrame{padding:6px;border-radius:12px}.boardInner{border-width:2px;border-radius:7px}.boardPresentation:after{inset:9px}.boardPresentation .royalCorner{width:15px;height:15px;font-size:8px;border-width:1px}.diceArena{height:100px;border-radius:14px}.diceArena .dieShell{top:32px;transform:translateX(-50%) scale(.72);transform-origin:top center}.diceArena .dieShadow{top:76px;width:49px}.diceArena .trayTitle{font-size:7px;top:6px}.side .turnTitle{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.diceArena .die.rolling{animation-duration:.67s!important}.diceArena .dieShadow.rolling{animation-duration:.67s}}
+
+
+/* Larger physical dice theater, phone-safe button placement, polished royal lobby art */
+.heroArt{perspective:820px;overflow:visible}
+.heroBoardBlock{position:absolute;z-index:1;width:219px;height:219px;transform:rotate(-11deg) rotateX(13deg) rotateY(-10deg);transform-style:preserve-3d;box-shadow:0 16px 18px #000a,0 24px 30px #0006;border:8px ridge #e2bd78;border-radius:13px;overflow:hidden;background:#1d3345}
+.heroBoardBlock:before{content:"";pointer-events:none;position:absolute;inset:0;z-index:2;box-shadow:inset 0 0 0 3px #fff6d088,inset 0 14px 14px #fff7;border-radius:4px}
+.heroBoardBlock canvas{height:100%;width:100%;display:block}
+.heroBoardSeal{position:absolute;z-index:2;bottom:7px;right:5px;color:#ffe1a4;text-shadow:0 2px 4px #000b}
+.heroDice{z-index:3;position:absolute;bottom:-4px;right:8px;font-size:37px;color:#fff2df;text-shadow:0 7px 8px #000a;transform:rotate(15deg)}
+@media(max-width:769px){
+ .side{display:flex;flex-direction:column;gap:11px}
+ .side .scoreCard{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .side .diceCard{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(137px,43%);grid-template-areas:'turn tray' 'roll tray' 'hint hint' 'choose choose' 'timer timer';gap:8px 12px;padding:15px;text-align:left;align-items:center}
+ .side .diceCard>div:first-child{grid-area:turn}
+ .side .diceCard .diceRow{grid-area:tray;width:100%;margin:0}
+ .side .diceCard .rollBtn{grid-area:roll;max-width:100%;width:100%}
+ .side .diceCard .hint{grid-area:hint;margin:0;min-height:0}
+ .side .diceCard .chooseArea{grid-area:choose;margin:0}
+ .side .diceCard .timerMeter{grid-area:timer;margin:0}
+ .side .diceCard .diceArena{height:154px}
+ .side .diceArena .dieShell{top:63px}
+ .side .diceArena .dieShadow{top:114px}
+ .side .turnTitle{font-size:18px}
+}
+@media(max-width:510px){
+ .heroBoardBlock{width:116px;height:116px;border-width:5px;border-radius:8px}
+ .heroDice{font-size:21px;bottom:7px;right:-4px}
+ .side .diceCard{padding:10px;gap:5px 8px;grid-template-columns:minmax(0,1fr) minmax(125px,42%);border-radius:16px}
+ .side .diceCard .diceArena{height:131px}
+ .side .diceArena .dieShell{top:49px;transform:translateX(-50%) scale(.86)}
+ .side .diceArena .dieShadow{top:102px}
+ .side .diceCard .rollBtn{padding:12px 6px;font-size:12px}
+ .side .scoreCard{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+ .side .turnTitle{font-size:15px}
+}
+@media(max-width:355px){.side .diceCard{grid-template-columns:minmax(0,1fr) minmax(112px,41%)}.side .diceCard .diceArena{height:124px}.side .diceArena .dieShell{transform:translateX(-50%) scale(.72);top:48px}.side .diceArena .dieShadow{top:98px}}
+
 </style></head>
 <body><div class="shell">
 <header class="head"><div class="brandBlock"><div class="crest">♛</div><div class="brandText">LUDO ROYALE<small>BY PLAYNOVA • PREMIUM BOARD GAMES</small></div></div><div class="headTools"><button class="iconBtn" id="soundBtn" title="Toggle audio" aria-label="Toggle audio">🔊</button><button class="iconBtn" id="menuBtn" title="Game menu" aria-label="Game menu">☰</button></div></header>
 <section id="lobby">
- <div class="hero"><div><span class="kicker">THE ROYAL TABLE AWAITS</span><h1>Roll. Rival.<br><span style="color:#f0c778">Rule the board.</span></h1><p>Classic Ludo, reimagined with satisfying moves, clever rivals, bold captures and animated reactions. One board. Endless rivalries.</p></div><div class="heroArt"><div class="artGlow"></div><div class="artBoard"><div class="artPiece"></div><div class="artPiece"></div><div class="artPiece"></div><div class="artPiece"></div></div><div class="floatingDie">⚄</div></div></div>
+ <div class="hero"><div><span class="kicker">THE ROYAL TABLE AWAITS</span><h1>Roll. Rival.<br><span style="color:#f0c778">Rule the board.</span></h1><p>Classic Ludo, reimagined with satisfying moves, clever rivals, bold captures and animated reactions. One board. Endless rivalries.</p></div><div class="heroArt"><div class="artGlow"></div><div class="heroBoardBlock"><canvas id="lobbyBoard" width="750" height="750" aria-hidden="true"></canvas><div class="heroBoardSeal">♛</div></div><div class="heroDice">⚄</div></div></div>
  <div class="lobbyGrid">
  <div class="card"><h2 class="cardTitle">♛ Set the table</h2><span class="sectionLabel">PLAY MODE</span><div class="seg" id="modeButtons"><button class="selected" data-mode="ai">♟ Player vs AI</button><button data-mode="local">♟ Local Friends</button></div>
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px"><label><span class="sectionLabel">PLAYERS</span><select id="playerCount" class="select"><option value="2">2 players</option><option value="3">3 players</option><option value="4">4 players</option></select></label><label id="difficultyBox"><span class="sectionLabel">AI DIFFICULTY</span><select id="difficulty" class="select"><option value="easy">Easy</option><option value="normal" selected>Normal</option><option value="hard">Hard</option></select></label></div>
@@ -32,8 +133,8 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background-ima
  </div></div><p class="privacy">✦ Offline playable · No accounts · Real dice rolls · Your move, your story ✦</p>
 </section>
 <section id="gameScene" class="hidden"><div class="gameTop"><div><div class="roundTag">♛ THE ROYAL ARENA</div><div class="gameStatus" id="matchLabel">CLASSIC • 2 PLAYERS</div></div><button class="pauseBtn" id="pauseGame">Ⅱ PAUSE</button></div>
- <div class="gameStage"><div class="gameBoardCol"><div class="boardFrame"><div class="boardInner"><canvas id="board" width="750" height="750" role="button" aria-label="Ludo board. Tap highlighted tokens to move."></canvas></div></div><div class="boardFoot">✦ Tap a glowing token to move it · Exact roll to finish ✦</div></div>
- <div class="side"><div class="scoreCard" id="playerTiles"></div><div class="diceCard"><div><div class="turnTitle" id="currentTitle">RED'S TURN</div><div class="turnSub" id="turnSub">Roll the dice to begin.</div></div><div class="diceRow"><div class="dieShell"><div class="die" id="die"></div></div></div><button class="rollBtn" id="rollDice">🎲 ROLL DICE</button><div id="hint" class="hint">A six lets you open a token.</div><div class="chooseArea hidden" id="chooseArea"><div class="chooseTitle">SELECT A TOKEN TO MOVE</div><div class="tokenOptions" id="tokenChoices"></div></div><div class="timerMeter hidden" id="timerMeter"><div class="timerFill" id="timerFill"></div></div></div><div class="card activity"><h3>✧ ROYAL ANNOUNCER</h3><div class="log" id="activityLog">Welcome to the board. May the boldest player win!</div></div><div class="card legend"><span>★</span> Star squares are protected.<br><span>♛</span> The first player to bring all four tokens home wins.<br><span>✨</span> Capture, six rolls and finishing may award extra turns.</div></div></div>
+ <div class="gameStage"><div class="gameBoardCol"><div class="boardPresentation"><div class="royalCorner rc1">✦</div><div class="royalCorner rc2">✦</div><div class="royalCorner rc3">✦</div><div class="royalCorner rc4">✦</div><div class="boardFrame"><div class="boardInner"><canvas id="board" width="750" height="750" role="button" aria-label="Ludo board. Tap highlighted tokens to move."></canvas></div></div></div><div class="boardFoot">✦ Tap a glowing token to move it · Exact roll to finish ✦</div></div>
+ <div class="side"><div class="scoreCard" id="playerTiles"></div><div class="diceCard"><div><div class="turnTitle" id="currentTitle">RED'S TURN</div><div class="turnSub" id="turnSub">Roll the dice to begin.</div></div><div class="diceRow"><div class="diceArena" id="diceArena"><div class="trayTitle">ROYAL DICE ARENA</div><div class="trayHalo"></div><div class="dieShadow" id="dieShadow"></div><div class="dieShell"><div class="die" id="die"></div></div><div class="trayLine"></div></div></div><button class="rollBtn" id="rollDice">🎲 ROLL DICE</button><div id="hint" class="hint">A six lets you open a token.</div><div class="chooseArea hidden" id="chooseArea"><div class="chooseTitle">SELECT A TOKEN TO MOVE</div><div class="tokenOptions" id="tokenChoices"></div></div><div class="timerMeter hidden" id="timerMeter"><div class="timerFill" id="timerFill"></div></div></div><div class="card activity"><h3>✧ ROYAL ANNOUNCER</h3><div class="log" id="activityLog">Welcome to the board. May the boldest player win!</div></div><div class="card legend"><span>★</span> Star squares are protected.<br><span>♛</span> The first player to bring all four tokens home wins.<br><span>✨</span> Capture, six rolls and finishing may award extra turns.</div></div></div>
 </section>
 </div>
 <div id="eventWrap" class="eventWrap" aria-live="polite"></div>
@@ -71,7 +172,14 @@ function note(freq,dur=.11,type='sine',loud=.35,when=0){const a=audioReady();if(
 function sfx(type){if(type==='roll'){note(290,.085,'triangle',.32);note(410,.07,'triangle',.24,.1);note(480,.14,'triangle',.24,.23)}if(type==='step')note(440+Math.random()*90,.064,'sine',.14);if(type==='six'){note(580,.13,'triangle',.30);note(770,.17,'triangle',.38,.12);note(990,.19,'sine',.4,.24)}if(type==='capture'){note(490,.10,'square',.25);note(340,.16,'sawtooth',.32,.13);note(210,.23,'triangle',.40,.28)}if(type==='miss')note(260,.12,'triangle',.32);if(type==='finish'){note(540,.14,'sine',.4);note(720,.14,'sine',.4,.12);note(930,.2,'triangle',.4,.27)}if(type==='win'){[523,659,784,1047].forEach((f,i)=>note(f,.33,'triangle',.34,i*.15))}}
 $('soundBtn').onclick=()=>{sound=!sound;try{localStorage.setItem('ludo_royale_sound',sound?'on':'off')}catch(e){}$('soundBtn').textContent=sound?'🔊':'🔇';if(sound){audioReady();sfx('six')}};
 const PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
-function drawDie(n){const e=$('die');e.className='die'+(n===6?' dieSix':'')+(phase==='rolling'?' rolling':'');e.innerHTML=Array.from({length:9},(_,i)=>PIPS[n].includes(i)?'<i class="pip"></i>':'<i></i>').join('')}
+const DICE_POSE={1:[-14,19],2:[90,8],3:[0,-90],4:[0,90],5:[-90,9],6:[0,180]};
+function dieFaces(){return [1,2,3,4,5,6].map(n=>`<div class="cubeFace" data-face="${n}">${Array.from({length:9},(_,i)=>PIPS[n].includes(i)?'<i class="pip"></i>':'<i></i>').join('')}</div>`).join('')}
+const royalDie=$('die');royalDie.innerHTML=dieFaces();
+let royalThrowResult=1;
+function dicePose(n){const pose=DICE_POSE[n]||DICE_POSE[1];royalDie.style.setProperty('--endX',pose[0]+'deg');royalDie.style.setProperty('--endY',pose[1]+'deg');return `rotateX(${pose[0]}deg) rotateY(${pose[1]}deg)`}
+function drawDie(n){if(phase==='rolling')return;royalDie.classList.remove('rolling');$('dieShadow').classList.remove('rolling');royalDie.style.transform=dicePose(n)}
+function startRoyalThrow(result){royalThrowResult=result;dicePose(result);royalDie.style.transform='';royalDie.classList.remove('rolling');$('dieShadow').classList.remove('rolling');void royalDie.offsetWidth;royalDie.classList.add('rolling');$('dieShadow').classList.add('rolling')}
+function settleRoyalThrow(n){royalDie.classList.remove('rolling');$('dieShadow').classList.remove('rolling');royalDie.style.transform=dicePose(n)}
 function log(message){actLog=message;$('activityLog').textContent=message}
 function burst(col,amount=16,x=.5,y=.38){for(let i=0;i<amount;i++){const e=document.createElement('span');e.className='spark';e.style.left=(x*100)+'vw';e.style.top=(y*100)+'vh';e.style.background=col;e.style.setProperty('--dx',((Math.random()-.5)*260)+'px');e.style.setProperty('--dy',((Math.random()-.5)*220-25)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),840)}}
 const LINES={kill:[['💥','BACK TO BASE!','That token just took the express ride home.'],['⚔️','ROYAL TAKEDOWN!','One brave move. One very long walk back.'],['🚀','SEE YOU AT BASE!','The board has spoken!']],miss:[['😏','OH, YOU MISSED!','A capture was right there…'],['👀','SO CLOSE!','That rival just escaped a royal ambush.'],['🫣','MISSED YOUR CHANCE!','The throne demands sharper moves.']],six:[['🎲','LUCKY SIX!','The dice have crowned this roll.'],['✨','SIX! ANOTHER SHOT!','The table is on your side.']],safe:[['🛡️','SAFE & SOUND!','A smart stop on a protected square.']],finish:[['🏅','HOME SWEET HOME!','One token closer to the crown.'],['🏁','ROYAL ARRIVAL!','That token finished in style.']],win:[['👑','ALL HAIL THE CHAMPION!','The crown has a new owner!']],triple:[['😵','THREE SIXES!','Too much luck: your turn is forfeited.']],no:[['🎯','NO LEGAL MOVE!','The dice will give you another chance.']]};
@@ -95,8 +203,8 @@ function chooseAiMove(choices,roll){if(difficulty==='easy')return choices[Math.f
 function startTurn(){if(gameOver)return;pendingWait=null;phase='ready';legal=[];streak=0;lastRoll=0;turnDeadline=rules.timer&&!current().bot?performance.now()+15000:0;updateUI();if(current().bot)scheduleAI('roll')}
 function updateUI(){if(scene!=='game')return;players.forEach((p,i)=>{let e=$('tile'+i);if(e){e.classList.toggle('active',i===turn);$('done'+i).textContent=finished(p)+'/4 Home'+(p.bot?' · AI':'')}});$('currentTitle').textContent=current().name.toUpperCase()+'\'S TURN';$('currentTitle').style.color=COLORS[current().color].soft;$('turnSub').textContent=current().bot?'Your rival is thinking…':phase==='choose'?'Pick a glowing token.':phase==='rolling'?'Dice rolling…':'Roll the dice to play.';$('rollDice').disabled=phase!=='ready'||paused||current().bot||gameOver;$('rollDice').textContent=phase==='rolling'?'🎲 ROLLING…':phase==='choose'?'♟ PICK TOKEN':'🎲 ROLL DICE';$('chooseArea').classList.toggle('hidden',phase!=='choose'||current().bot);if(phase==='choose'&&!current().bot){$('tokenChoices').innerHTML=legal.map(i=>`<button class="tokenOpt" data-index="${i}">♟ TOKEN ${i+1}${current().pieces[i]<0?' · ENTER':''}</button>`).join('');[...$('tokenChoices').querySelectorAll('button')].forEach(b=>b.onclick=()=>moveToken(Number(b.dataset.index)))}$('hint').textContent=phase==='choose'?'You rolled '+dice+'. Choose a glowing token.':phase==='rolling'?'The royal dice decide your fate…':phase==='ready'?lastRoll===6?'Bonus turn! Roll again.':current().bot?'Watch your rival make a move.':'Tap ROLL DICE to begin your turn.':'Watch the token travel…';$('timerMeter').classList.toggle('hidden',!rules.timer||current().bot||phase==='moving'||phase==='rolling'||paused);$('timerFill').style.width='100%'}
 function scheduleAI(action,delay=750){clearTimeout(aiWait);const ticket=transitionTicket;aiWait=setTimeout(()=>{if(ticket!==transitionTicket||gameOver||paused||!current().bot)return;if(action==='roll'&&phase==='ready')rollDice();else if(action==='choose'&&phase==='choose')moveToken(chooseAiMove(legal,lastRoll))},delay)}
-function rollDice(force){if(phase!=='ready'||gameOver||paused)return;audioReady();phase='rolling';lastRoll=0;drawDie(dice);updateUI();sfx('roll');const result=Number.isInteger(force)&&force>=1&&force<=6?force:randDie();let start=performance.now(),old=transitionTicket;
- function spin(){if(transitionTicket!==old||paused||scene!=='game')return;const elapsed=performance.now()-start;if(elapsed<660){dice=randDie();drawDie(dice);rollWait=setTimeout(spin,65);return}dice=result;drawDie(dice);lastRoll=result;rollNumber++;if(result===6){streak++;sfx('six');event('six',current().name)}else streak=0;
+function rollDice(force){if(phase!=='ready'||gameOver||paused)return;audioReady();phase='rolling';lastRoll=0;drawDie(dice);updateUI();sfx('roll');const result=Number.isInteger(force)&&force>=1&&force<=6?force:randDie();startRoyalThrow(result);let start=performance.now(),old=transitionTicket;
+ function spin(){if(transitionTicket!==old||paused||scene!=='game')return;const elapsed=performance.now()-start;if(elapsed<660){dice=randDie();drawDie(dice);rollWait=setTimeout(spin,65);return}dice=result;settleRoyalThrow(result);lastRoll=result;rollNumber++;if(result===6){streak++;sfx('six');event('six',current().name)}else streak=0;
  if(result===6&&rules.threeSix&&streak>=3){event('triple',current().name);log(current().name+' rolled three sixes. Turn forfeited!');phase='waiting';updateUI();advanceTurnLater(1350);return}
  legal=legalMoves(current(),result);if(!legal.length){phase='waiting';updateUI();log(current().name+' rolled '+result+' — no move available.');if(result!==6)event('no',current().name);afterMove({six:result===6,captured:false,finished:false,noMove:true});return}
  phase='choose';updateUI();if(current().bot)scheduleAI('choose',550);else if(legal.length===1){ // auto advance only on one unambiguous legal token
@@ -124,14 +232,107 @@ function rr(x,y,w,h,r=10){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
 function fillRR(x,y,w,h,r,color){ctx.fillStyle=color;rr(x,y,w,h,r);ctx.fill()}
 function text(str,x,y,size=12,col='#253244',weight='700',align='center'){ctx.save();ctx.fillStyle=col;ctx.textAlign=align;ctx.textBaseline='middle';ctx.font=`${weight} ${size}px system-ui`;ctx.fillText(str,x,y);ctx.restore()}
 function cellCenter(r,c){return{x:(c+.5)*C,y:(r+.5)*C}}
-function drawBase(color,x,y){const k=COLORS[color];const grad=ctx.createLinearGradient(x,y,x+300,y+300);grad.addColorStop(0,k.soft);grad.addColorStop(.4,k.hex);grad.addColorStop(1,k.dark);ctx.fillStyle=grad;ctx.fillRect(x,y,300,300);fillRR(x+19,y+19,262,262,29,'#fff8e7');ctx.strokeStyle='#d2b989';ctx.lineWidth=3;rr(x+21,y+21,258,258,28);ctx.stroke();for(const [row,col] of DOCK[color]){const cx=(col+.5)*C,cy=(row+.5)*C;ctx.beginPath();ctx.arc(cx,cy,32,0,Math.PI*2);ctx.fillStyle='#f0ead8';ctx.fill();ctx.lineWidth=7;ctx.strokeStyle=k.dark;ctx.stroke();ctx.beginPath();ctx.arc(cx,cy,21,0,Math.PI*2);ctx.strokeStyle=k.soft;ctx.lineWidth=2;ctx.stroke()}ctx.fillStyle='#ffffff20';ctx.fillRect(x,y,300,6)}
-function drawBoard(){ctx.save();ctx.clearRect(0,0,W,W);const bg=ctx.createLinearGradient(0,0,W,W);bg.addColorStop(0,'#f8f0dc');bg.addColorStop(1,'#ebd9b5');ctx.fillStyle=bg;ctx.fillRect(0,0,W,W);drawBase('red',0,0);drawBase('green',450,0);drawBase('yellow',450,450);drawBase('blue',0,450);
- // grid only over track cross
- for(let row=0;row<15;row++)for(let col=0;col<15;col++)if((row>=6&&row<=8)||(col>=6&&col<=8)){const x=col*C,y=row*C;let color='#fffaf0';if(row===7&&col>=1&&col<=5)color='#ffbbb2';if(col===7&&row>=1&&row<=5)color='#a8eed4';if(row===7&&col>=9&&col<=13)color='#fce5a1';if(col===7&&row>=9&&row<=13)color='#a4d4fa';const sc=TRACK.findIndex(p=>p[0]===row&&p[1]===col);const home=COLOR_ORDER.find(c=>COLORS[c].offset===sc);if(home)color=COLORS[home].soft;ctx.fillStyle=color;ctx.fillRect(x,y,C,C);ctx.strokeStyle='#9c968c';ctx.lineWidth=1.55;ctx.strokeRect(x+.9,y+.9,C-1.8,C-1.8);
- if(sc>=0&&SAFE.has(sc)){ctx.save();ctx.translate(x+25,y+25);ctx.fillStyle=sc===0?'#a63b35':sc===13?'#12755e':sc===26?'#a67b1d':sc===39?'#2566ab':'#90765a';ctx.beginPath();for(let s=0;s<10;s++){const a=Math.PI*2*s/10-Math.PI/2,r=s%2?8:18;ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r)}ctx.closePath();ctx.fill();ctx.restore()}}
- // Center home triangles
- const triangle=(pts,color)=>{ctx.beginPath();ctx.moveTo(...pts[0]);pts.slice(1).forEach(pt=>ctx.lineTo(...pt));ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.lineWidth=2;ctx.strokeStyle='#f4edd9';ctx.stroke()};triangle([[300,300],[450,300],[375,375]],'#2ba981');triangle([[450,300],[450,450],[375,375]],'#e8b84c');triangle([[450,450],[300,450],[375,375]],'#4995dc');triangle([[300,450],[300,300],[375,375]],'#df655e');ctx.fillStyle='#fff5d8';ctx.beginPath();ctx.arc(375,375,20,0,Math.PI*2);ctx.fill();text('♛',375,375,23,'#a78649');ctx.strokeStyle='#8c744e';ctx.lineWidth=7;ctx.strokeRect(3.5,3.5,W-7,W-7);ctx.restore()}
-function tokenAt(x,y,k,scale=1,highlight=false,ghost=false){ctx.save();ctx.translate(x*C,y*C);ctx.scale(scale,scale);if(ghost)ctx.globalAlpha=.6;if(highlight){const pul=.5+.5*Math.sin(performance.now()/165);ctx.strokeStyle=`rgba(241,199,95,${.45+.5*pul})`;ctx.lineWidth=5;ctx.beginPath();ctx.arc(0,0,21+pul*5,0,Math.PI*2);ctx.stroke()};ctx.fillStyle='#0005';ctx.beginPath();ctx.ellipse(2,15,16,6,0,0,7);ctx.fill();const body=ctx.createLinearGradient(-15,-16,14,17);body.addColorStop(0,k.soft);body.addColorStop(.4,k.hex);body.addColorStop(1,k.dark);ctx.fillStyle=body;ctx.strokeStyle='#fffdf1';ctx.lineWidth=3;ctx.beginPath();ctx.ellipse(0,8,17,9,0,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.beginPath();ctx.moveTo(-11,6);ctx.quadraticCurveTo(-11,-6,-7,-8);ctx.lineTo(-5,-17);ctx.quadraticCurveTo(0,-27,5,-17);ctx.lineTo(7,-8);ctx.quadraticCurveTo(11,-5,11,6);ctx.closePath();ctx.fill();ctx.stroke();ctx.fillStyle='#ffffffa8';ctx.beginPath();ctx.ellipse(-4,-12,3,5,-.3,0,Math.PI*2);ctx.fill();ctx.restore()}
+// High-quality board is painted once to an offscreen surface; moving tokens are rendered separately.
+const boardArt=document.createElement('canvas');boardArt.width=boardArt.height=W;
+const boardArtCtx=boardArt.getContext('2d');let royalBoardCached=false;
+function facePanel(x,y,w,h,r,top,edge,shadow=5){
+ ctx.save();ctx.shadowColor='#0004';ctx.shadowBlur=shadow+4;ctx.shadowOffsetY=4;
+ fillRR(x,y+4,w,h,r,edge);ctx.shadowColor='transparent';ctx.shadowBlur=0;ctx.shadowOffsetY=0;
+ const g=ctx.createLinearGradient(x,y,x,y+h);g.addColorStop(0,'#ffffff55');g.addColorStop(.16,top);g.addColorStop(.83,top);g.addColorStop(1,edge);
+ fillRR(x,y,w,h-2,r,g);ctx.strokeStyle='#fffbe480';ctx.lineWidth=2;rr(x+2,y+2,w-4,h-6,Math.max(3,r-2));ctx.stroke();ctx.restore();
+}
+function drawBase(color,x,y){
+ const k=COLORS[color],g=ctx.createLinearGradient(x,y,x+300,y+300);
+ g.addColorStop(0,k.soft);g.addColorStop(.22,k.hex);g.addColorStop(.8,k.hex);g.addColorStop(1,k.dark);
+ ctx.fillStyle=g;ctx.fillRect(x,y,300,300);
+ // quilted enamel texture with diagonal highlights
+ ctx.save();ctx.beginPath();ctx.rect(x,y,300,300);ctx.clip();
+ for(let i=-260;i<=380;i+=33){ctx.strokeStyle='#ffffff13';ctx.lineWidth=1.7;ctx.beginPath();ctx.moveTo(x+i,y);ctx.lineTo(x+i+300,y+300);ctx.stroke()}
+ const gloss=ctx.createLinearGradient(x,y,x+280,y+290);gloss.addColorStop(0,'#ffffff43');gloss.addColorStop(.4,'#ffffff05');gloss.addColorStop(1,'#0000002e');ctx.fillStyle=gloss;ctx.fillRect(x,y,300,300);
+ // raised porcelain cradle inside each base, leaving substantial colorful bezel
+ facePanel(x+15,y+15,270,266,25,'#fff4da','#c9a975',8);
+ const inner=ctx.createLinearGradient(x+30,y+30,x+260,y+275);inner.addColorStop(0,'#fffef4');inner.addColorStop(.6,'#faf2db');inner.addColorStop(1,'#e9d5b3');
+ fillRR(x+30,y+30,240,238,20,inner);ctx.strokeStyle='#dac496';ctx.lineWidth=2;rr(x+30,y+30,240,238,20);ctx.stroke();
+ // engraved corner filigree, subtle and symmetrical
+ ctx.strokeStyle=k.hex+'6a';ctx.lineWidth=3;
+ for(const [dx,dy,sx,sy] of [[52,52,1,1],[248,52,-1,1],[52,242,1,-1],[248,242,-1,-1]]){
+ ctx.beginPath();ctx.arc(x+dx,y+dy,13,Math.PI*.25*sx,Math.PI*.75*sx);ctx.stroke();
+ }
+ for(const [row,col] of DOCK[color]){
+  const cx=(col+.5)*C,cy=(row+.5)*C;
+  ctx.save();ctx.shadowColor='#150d0e66';ctx.shadowBlur=9;ctx.shadowOffsetY=4;
+  ctx.beginPath();ctx.arc(cx,cy,34,0,Math.PI*2);ctx.fillStyle=k.dark;ctx.fill();ctx.restore();
+  let rim=ctx.createLinearGradient(cx-24,cy-27,cx+26,cy+32);rim.addColorStop(0,'#fff5d4');rim.addColorStop(.5,'#ceae6c');rim.addColorStop(1,'#885726');ctx.fillStyle=rim;
+  ctx.beginPath();ctx.arc(cx,cy-2,33,0,Math.PI*2);ctx.fill();
+  const inset=ctx.createRadialGradient(cx-5,cy-12,1,cx,cy,28);inset.addColorStop(0,'#fffdef');inset.addColorStop(1,k.soft);
+  ctx.fillStyle=inset;ctx.beginPath();ctx.arc(cx,cy-3,25,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#ffffffc9';ctx.lineWidth=2;ctx.beginPath();ctx.arc(cx,cy-4,22,Math.PI*1.08,Math.PI*1.85);ctx.stroke();
+ }
+ ctx.restore();
+}
+function raisedCell(x,y,color,isSafe=false){
+ ctx.fillStyle='#66482c';ctx.fillRect(x,y+1,C,C-1);
+ const g=ctx.createLinearGradient(x,y,x+C,y+C);g.addColorStop(0,'#ffffff');g.addColorStop(.18,color);g.addColorStop(.76,color);g.addColorStop(1,'#b1a698');
+ ctx.fillStyle=g;ctx.fillRect(x+1.2,y+1.2,C-2.4,C-4);
+ ctx.strokeStyle='#fffdf0bd';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+2.5,y+C-3);ctx.lineTo(x+2.5,y+3);ctx.lineTo(x+C-3,y+3);ctx.stroke();
+ ctx.strokeStyle='#67543d7c';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+2,y+C-3);ctx.lineTo(x+C-3,y+C-3);ctx.lineTo(x+C-3,y+2);ctx.stroke();
+ if(isSafe){ctx.save();ctx.translate(x+C/2,y+C/2-1);
+  ctx.shadowColor='#0005';ctx.shadowBlur=4;ctx.shadowOffsetY=3;
+  const sg=ctx.createLinearGradient(-18,-17,19,20);sg.addColorStop(0,'#fff2ac');sg.addColorStop(.45,'#ba843f');sg.addColorStop(1,'#60401c');ctx.fillStyle=sg;
+  ctx.beginPath();for(let q=0;q<10;q++){const a=-Math.PI/2+q*Math.PI/5,rad=q%2?8.5:19;ctx.lineTo(Math.cos(a)*rad,Math.sin(a)*rad)}ctx.closePath();ctx.fill();ctx.shadowColor='transparent';ctx.strokeStyle='#fff2cb';ctx.lineWidth=1.3;ctx.stroke();ctx.restore()}
+}
+function paintRoyalBoard(){
+ ctx.clearRect(0,0,W,W);
+ const bg=ctx.createLinearGradient(0,0,W,W);bg.addColorStop(0,'#fff1d1');bg.addColorStop(.53,'#e2ceae');bg.addColorStop(1,'#cfac7c');ctx.fillStyle=bg;ctx.fillRect(0,0,W,W);
+ // inner reflective border lines
+ drawBase('red',0,0);drawBase('green',450,0);drawBase('yellow',450,450);drawBase('blue',0,450);
+ for(let row=0;row<15;row++)for(let col=0;col<15;col++)if((row>=6&&row<=8)||(col>=6&&col<=8)){
+  const x=col*C,y=row*C;let color='#f5f1e7';
+  if(row===7&&col>=1&&col<=5)color='#f0a1a0';
+  if(col===7&&row>=1&&row<=5)color='#85d9bc';
+  if(row===7&&col>=9&&col<=13)color='#f4d37c';
+  if(col===7&&row>=9&&row<=13)color='#8cbbeb';
+  const sc=TRACK.findIndex(q=>q[0]===row&&q[1]===col);
+  const home=COLOR_ORDER.find(c=>COLORS[c].offset===sc);
+  if(home)color=COLORS[home].soft;
+  raisedCell(x,y,color,sc>=0&&SAFE.has(sc));
+ }
+ const triangle=(pts,base)=>{ctx.save();ctx.beginPath();ctx.moveTo(...pts[0]);pts.slice(1).forEach(pt=>ctx.lineTo(...pt));ctx.closePath();
+  const g=ctx.createLinearGradient(330,310,420,445);g.addColorStop(0,'#ffffff44');g.addColorStop(.5,base);g.addColorStop(1,'#00000030');ctx.fillStyle=g;ctx.shadowBlur=5;ctx.shadowColor='#0004';ctx.fill();ctx.shadowBlur=0;ctx.lineWidth=2;ctx.strokeStyle='#fff7d3d7';ctx.stroke();ctx.restore()};
+ triangle([[300,300],[450,300],[375,375]],'#1fa37f');triangle([[450,300],[450,450],[375,375]],'#d8a73d');triangle([[450,450],[300,450],[375,375]],'#327ac9');triangle([[300,450],[300,300],[375,375]],'#d65152');
+ // engraved royal crown medallion at center
+ ctx.save();ctx.shadowBlur=10;ctx.shadowColor='#0008';ctx.beginPath();ctx.arc(375,375,26,0,Math.PI*2);ctx.fillStyle='#634525';ctx.fill();ctx.restore();
+ const med=ctx.createRadialGradient(369,363,2,375,375,24);med.addColorStop(0,'#fff8d6');med.addColorStop(.55,'#e5bd72');med.addColorStop(1,'#97703e');ctx.fillStyle=med;ctx.beginPath();ctx.arc(375,373,23,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#fff7cf';ctx.lineWidth=2;ctx.stroke();text('♛',375,372,25,'#81552c');
+ // perimeter shadow/reflection
+ ctx.strokeStyle='#3d2815aa';ctx.lineWidth=8;ctx.strokeRect(4,4,W-8,W-8);
+ ctx.strokeStyle='#fff2c2be';ctx.lineWidth=3;ctx.strokeRect(10,10,W-20,W-20);
+ const glow=ctx.createLinearGradient(0,0,0,175);glow.addColorStop(0,'#fff9dc32');glow.addColorStop(1,'#fff9dc00');ctx.fillStyle=glow;ctx.fillRect(12,12,W-24,167);
+}
+function drawBoard(){
+ if(!royalBoardCached){paintRoyalBoard();boardArtCtx.clearRect(0,0,W,W);boardArtCtx.drawImage(canvas,0,0);royalBoardCached=true}
+ else{ctx.clearRect(0,0,W,W);ctx.drawImage(boardArt,0,0)}
+}
+function tokenAt(x,y,k,scale=1,highlight=false,ghost=false){
+ ctx.save();ctx.translate(x*C,y*C);ctx.scale(scale,scale);if(ghost)ctx.globalAlpha=.6;
+ const t=performance.now();if(highlight){const pulse=(1+Math.sin(t/210))/2;ctx.save();ctx.shadowColor=k.hex;ctx.shadowBlur=12+pulse*13;ctx.strokeStyle=`rgba(255,240,167,${.6+.3*pulse})`;ctx.lineWidth=4;ctx.beginPath();ctx.arc(0,-5,23+pulse*4,0,Math.PI*2);ctx.stroke();ctx.restore()}
+ // floating translucent shadow
+ ctx.fillStyle='#160d1366';ctx.filter='blur(3px)';ctx.beginPath();ctx.ellipse(3,17,20,6,0,0,Math.PI*2);ctx.fill();ctx.filter='none';
+ // foot ring: extruded metal with enamel
+ const baseG=ctx.createLinearGradient(-20,-7,18,22);baseG.addColorStop(0,'#fff8d9');baseG.addColorStop(.32,'#c8a069');baseG.addColorStop(.77,'#94703c');baseG.addColorStop(1,'#3f271e');
+ ctx.beginPath();ctx.ellipse(0,9,20,11,0,0,Math.PI*2);ctx.fillStyle=baseG;ctx.fill();ctx.strokeStyle='#452e1c';ctx.lineWidth=1.5;ctx.stroke();
+ ctx.beginPath();ctx.ellipse(0,6,18.4,9,0,0,Math.PI*2);ctx.fillStyle=k.dark;ctx.fill();
+ ctx.beginPath();ctx.ellipse(0,4,15.4,7.9,0,0,Math.PI*2);ctx.fillStyle=k.hex;ctx.fill();
+ // beautiful 3d pawns: wide shoulder, narrow collar and glossy globe
+ const body=ctx.createLinearGradient(-14,-23,15,9);body.addColorStop(0,k.soft);body.addColorStop(.22,k.hex);body.addColorStop(.65,k.hex);body.addColorStop(1,k.dark);
+ ctx.beginPath();ctx.moveTo(-12,5);ctx.bezierCurveTo(-14,-2,-8,-11,-7,-13);ctx.lineTo(-7,-17);ctx.bezierCurveTo(-13,-24,-7,-29,0,-29);ctx.bezierCurveTo(7,-29,13,-24,7,-17);ctx.lineTo(7,-13);ctx.bezierCurveTo(8,-11,14,-2,12,5);ctx.closePath();ctx.fillStyle=body;ctx.fill();ctx.strokeStyle='#fff6dcbd';ctx.lineWidth=2;ctx.stroke();
+ const orb=ctx.createRadialGradient(-5,-25,1,0,-20,13);orb.addColorStop(0,'#fffef4');orb.addColorStop(.17,k.soft);orb.addColorStop(.48,k.hex);orb.addColorStop(1,k.dark);
+ ctx.fillStyle=orb;ctx.beginPath();ctx.arc(0,-20,11.2,0,Math.PI*2);ctx.fill();ctx.lineWidth=1.5;ctx.strokeStyle='#fffad5ab';ctx.stroke();
+ // specular highlights and golden collar
+ ctx.strokeStyle='#ffeadb96';ctx.lineWidth=2;ctx.beginPath();ctx.arc(-2.5,-21,5,2.5,4.5);ctx.stroke();
+ ctx.fillStyle='#ffffffa6';ctx.beginPath();ctx.ellipse(-5,-23,2.2,3.4,.34,0,Math.PI*2);ctx.fill();
+ ctx.beginPath();ctx.ellipse(0,-10,9,2.1,0,0,Math.PI*2);ctx.fillStyle='#fff4d5a8';ctx.fill();
+ ctx.restore();
+}
 function currentTokenPositions(){const grouped=new Map();players.forEach((p,pi)=>p.pieces.forEach((pos,i)=>{if(pos===56)return;const point=posFor(p,pos,i),key=pos>=0&&pos<=50?'track'+absoluteIndex(p,pos):pos===-1?'dock'+pi+'-'+i:'lane'+pi+'-'+pos;let arr=grouped.get(key)||[];arr.push({pi,i,point});grouped.set(key,arr)}));let out=[];for(const arr of grouped.values()){let n=arr.length;arr.forEach((v,i)=>{if(n>1){const a=2*Math.PI*i/n,vv=Math.min(.19,.09+.028*n);v.point={x:v.point.x+Math.cos(a)*vv,y:v.point.y+Math.sin(a)*vv}}out.push(v)})}return out}
 function drawTokens(){renderTokens=[];for(const v of currentTokenPositions()){const p=players[v.pi];if(animation&&animation.owner===v.pi&&animation.piece===v.i)continue;const isLegal=turn===v.pi&&phase==='choose'&&!p.bot&&legal.includes(v.i);tokenAt(v.point.x,v.point.y,COLORS[p.color],1,isLegal);renderTokens.push({...v,highlight:isLegal})}if(animation){tokenAt(animation.x,animation.y,COLORS[players[animation.owner].color],1.09,true)}}
 function render(){if(scene==='game'){drawBoard();drawTokens()}requestAnimationFrame(render)}requestAnimationFrame(render);
@@ -148,6 +349,8 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'&&scene==='game'){e.pre
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&scene==='game'&&!paused&&!gameOver)pauseGame()});
 setInterval(()=>{if(scene!=='game'||!rules.timer||current().bot||paused||gameOver||!['ready','choose'].includes(phase))return;const rem=turnDeadline-performance.now();$('timerFill').style.width=clamp(rem/15000*100,0,100)+'%';if(rem<=0){turnDeadline=0;if(phase==='ready')rollDice();else if(phase==='choose')moveToken(legal[0])}},130);
 refreshLobby();drawDie(1);
+// Lobby mini-board uses actual playable table artwork; no unlicensed imagery.
+(function initLobbyPreview(){try{drawBoard();const preview=document.getElementById('lobbyBoard');if(preview)preview.getContext('2d').drawImage(boardArt,0,0)}catch(e){console.warn('Ludo preview fallback',e)}})();
 // Diagnostics are exposed only with ?debug=1 and never determine production dice results.
 if(DEBUG)window.__ludoTest={get:()=>({players:structuredClone(players),turn,phase,dice,legal:legal.slice(),streak,pendingWait,rollNumber,gameOver,scene,rules:{...rules}}),set:(f)=>{f({players,turn,phase,dice,legal,streak});updateUI()},roll:rollDice,move:moveToken,board:TRACK.map(a=>a.slice()),legalMoves,capturesAt,threatened,advance:()=>{turn=(turn+1)%players.length;startTurn()},setPiece:(pi,i,pos)=>{players[pi].pieces[i]=pos;updateUI()},currentRules:()=>({...rules})};
 })();
