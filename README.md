@@ -1,6 +1,6 @@
 # PLAYNOVA 🎮
 
-PLAYNOVA is a premium **offline Android mini-games app**, using the approved PLAYNOVA Premium v2 dashboard and the original playable **TRAP IQ** game.
+PLAYNOVA is a premium **offline Android mini-games app**, using the approved PLAYNOVA Premium v2 dashboard and the upgraded playable **TRAP IQ** game (10 levels).
 
 ## How the Android APK is built
 
@@ -23,7 +23,7 @@ The debug APK is for testing, **not** a Play Store production release. The APK i
 
 ## Current game availability
 
-- **TRAP IQ**: 5 playable platform/trap levels.
+- **TRAP IQ**: 10 playable platform/trap levels, pause/resume, sound toggle, and Relaxed/Normal/Fast movement settings.
 - Other categories/games shown in the hub are planned/previews and are not yet playable.
 - Favorites and basic profile/progress are stored on the device using WebView local storage.
 
