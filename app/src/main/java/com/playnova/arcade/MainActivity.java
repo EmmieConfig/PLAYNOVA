@@ -2,6 +2,7 @@ package com.playnova.arcade;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
@@ -9,13 +10,17 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.window.OnBackInvokedCallback;
+import android.window.OnBackInvokedDispatcher;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
-/** Offline Android wrapper for the approved PLAYNOVA Premium v2 HTML arcade. */
+/** Offline Android wrapper for PLAYNOVA Premium v2 and TRAP IQ. */
 public final class MainActivity extends Activity {
     private WebView gameView;
+    private long lastBackAt = 0L;
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -35,6 +40,15 @@ public final class MainActivity extends Activity {
         gameView.setWebChromeClient(new WebChromeClient());
         gameView.setWebViewClient(new WebViewClient());
         setContentView(gameView);
+
+        // Android 13+ system back swipe, including Android 14 predictive back.
+        if (Build.VERSION.SDK_INT >= 33) {
+            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
+                OnBackInvokedDispatcher.PRIORITY_DEFAULT,
+                new OnBackInvokedCallback() {
+                    @Override public void onBackInvoked() { handleBack(); }
+                });
+        }
 
         try {
             gameView.loadDataWithBaseURL("https://playnova.local/", readBundledHtml(),
@@ -60,15 +74,35 @@ public final class MainActivity extends Activity {
         return builder.toString();
     }
 
+    /** Request in-app back navigation first; only exit after a second back at Home. */
+    private void handleBack() {
+        if (gameView == null) { finish(); return; }
+        gameView.evaluateJavascript(
+            "(function(){return !!(window.playNovaBack && window.playNovaBack());})()",
+            result -> {
+                if ("true".equals(result)) {
+                    lastBackAt = 0L;
+                    return;
+                }
+                long now = android.os.SystemClock.elapsedRealtime();
+                if (now - lastBackAt < 2000) {
+                    finish();
+                } else {
+                    lastBackAt = now;
+                    Toast.makeText(this, "Swipe back again to exit PLAYNOVA", Toast.LENGTH_SHORT).show();
+                }
+            });
+    }
+
     @Override public void onBackPressed() {
-        if (gameView != null && gameView.canGoBack()) gameView.goBack();
-        else super.onBackPressed();
+        handleBack();
     }
 
     @Override protected void onDestroy() {
         if (gameView != null) {
             gameView.stopLoading();
             gameView.destroy();
+            gameView = null;
         }
         super.onDestroy();
     }
