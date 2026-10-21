@@ -2,6 +2,7 @@ package com.playnova.arcade;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.window.OnBackInvokedCallback;
@@ -38,7 +41,27 @@ public final class MainActivity extends Activity {
         settings.setJavaScriptCanOpenWindowsAutomatically(false);
         settings.setDefaultTextEncodingName("UTF-8");
         gameView.setWebChromeClient(new WebChromeClient());
-        gameView.setWebViewClient(new WebViewClient());
+        // Keep large LUDO ROYALE artwork in its own offline HTML asset.
+        // Served under PLAYNOVA's existing trusted local origin; no internet or file access required.
+        gameView.setWebViewClient(new WebViewClient() {
+            @Override public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                Uri uri = request.getUrl();
+                if ("https".equals(uri.getScheme())
+                        && "playnova.local".equals(uri.getHost())
+                        && "/ludo_royale.html".equals(uri.getPath())) {
+                    try {
+                        return new WebResourceResponse("text/html", "UTF-8",
+                                getAssets().open("ludo_royale.html"));
+                    } catch (IOException exception) {
+                        return new WebResourceResponse("text/plain", "UTF-8",
+                                new java.io.ByteArrayInputStream(
+                                    "LUDO ROYALE asset not found".getBytes(
+                                        java.nio.charset.StandardCharsets.UTF_8)));
+                    }
+                }
+                return super.shouldInterceptRequest(view, request);
+            }
+        });
         setContentView(gameView);
 
         // Android 13+ system back swipe, including Android 14 predictive back.
